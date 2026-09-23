@@ -66,14 +66,20 @@ never take down the morning brief.
 - **Phase 3 — RENDER**: a clean HTML page, grouped by lane, that opens in one keystroke
   each morning.
 
-## Open question, carried into Phase 2
+## Decided: how the Africa lane is filtered
 The Africa lane fills from general African tech feeds (TechCabal, Technext, ITWeb…), which
-publish far more fintech and telecoms news than AI news. On a typical day the lane fills
-with good stories that are not AI stories. Two options, not yet decided:
-  (a) require an AI signal in the Africa lane — sharper, but the lane will often be empty;
-  (b) let Gemini judge relevance in Phase 2 and drop the misses — better judgement, costs
-      API calls on stories that get thrown away.
-Do not pick one silently.
+publish far more fintech and telecoms news than AI news, so on a typical day the lane
+filled with good stories that were not AI stories.
+
+DECISION (23 Sep 2026): Gemini judges relevance in Phase 2 and drops the misses. A keyword
+gate was rejected because "is this an AI story that matters to a Zimbabwean builder?" is a
+judgement call, not a keyword test — and a keyword gate would leave the lane empty on many
+days, which defeats the 15% reserved for it. The cost is API calls spent on candidates that
+are then discarded; that is accepted.
+
+Practical consequence: send the Africa lane MORE candidates than its quota needs, so there
+is something left after Gemini drops the misses. Do not let a dropped story leave a hole —
+fall back to the next candidate in the lane.
 
 ## HOW TO WORK WITH ME
 Build in phases and STOP after each one for me to verify. Explain what you did in plain
