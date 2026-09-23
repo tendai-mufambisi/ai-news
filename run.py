@@ -1,16 +1,15 @@
 """
-The Daily AI Brief - fetch and filter (Phase 1)
-===============================================
+The Daily AI Brief
+==================
 
 Run with:  python run.py
 
-    fetch (RSS)     feeds.py    38 AI, engineering, Africa and security feeds
-    -> filter       here        last 48h, dedupe, lane-rank, quota to 12
-    -> print        here        the brief, in the terminal
-
-Phases 2 (Gemini summaries) and 3 (the HTML page) are not built yet. This file
-stops at a clean printed brief on purpose, so the selection can be judged
-before a single API call is spent on it.
+    fetch (RSS)      feeds.py       40 AI, engineering, Africa and security feeds
+    -> filter        here           last 48h, dedupe, lane-rank, pool of 26
+    -> summarise     summarise.py   Gemini: summary, why-line, relevance
+    -> balance       here           survivors back down to a brief of 12
+    -> render        render.py      index.html
+    -> print         here           the same brief, in the terminal
 
 WHY THE SELECTION WORKS THE WAY IT DOES
 ---------------------------------------
@@ -39,6 +38,7 @@ from datetime import datetime, timedelta, timezone
 import feedparser
 
 from feeds import ANALYSIS, FEEDS, LANE_INTENT, LANE_KEYWORDS, PRIMARY, REPORTING
+from render import render
 from summarise import summarise
 
 # --- Tunables -----------------------------------------------------------
@@ -612,6 +612,14 @@ def main():
     picked = balance(kept, max_items=MAX_ITEMS)
     report_brief(picked)
     report_dropped(dropped)
+
+    print("\nRendering page...")
+    lane_order = sorted(LANE_SHARE, key=LANE_SHARE.get, reverse=True)
+    path = render(picked, dropped=dropped, lane_order=lane_order)
+    if not path:
+        return 1
+
+    print(f"\nDone. Open it with:  start {path.name}")
     return 0
 
 
