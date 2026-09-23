@@ -1,0 +1,4 @@
+aienv/
+.env
+__pycache__/
+index.html
