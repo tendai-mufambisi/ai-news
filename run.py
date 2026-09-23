@@ -39,11 +39,24 @@ from datetime import datetime, timedelta, timezone
 import feedparser
 
 from feeds import ANALYSIS, FEEDS, LANE_INTENT, LANE_KEYWORDS, PRIMARY, REPORTING
+from summarise import summarise
 
 # --- Tunables -----------------------------------------------------------
 LOOKBACK_HOURS = 48      # how far back an item may be published
 MAX_ITEMS = 12           # the size of one morning's brief
 MAX_PER_SOURCE = 2       # no single publisher may take more slots than this
+
+# How many candidates go to Gemini, against a finished brief of 12.
+#
+# The relevance gate in Phase 2 throws stories away, and a story thrown away
+# must not leave a hole in the brief - so we over-select by half and let the
+# gate cut it back down. It is one batched call either way, so the extra six
+# cost a few hundred tokens rather than another request.
+#
+# Set to 26 after the first live run: the gate rejected half of an 18-item
+# pool, which left a 9-story brief with an empty Business lane. The gate is
+# stricter than a keyword filter and the pool has to be sized for that.
+SUMMARISE_POOL = 26
 
 # 48h, not the 24h the Vintage build uses. AI news is bursty: a quiet Tuesday
 # and a forty-story Thursday. A 24h window gives you a thin brief half the week
@@ -529,27 +542,76 @@ def report_brief(picked):
             age_h = max(0.0, (now - item["published"]).total_seconds() / 3600)
             mark = {ANALYSIS: "**", PRIMARY: " *", REPORTING: "  "}[item["tier"]]
             print(f"\n  {mark} {item['title']}")
-            print(f"    {item['source']} | {age_h:.0f}h ago | score {item['score']}")
-            print(f"    {item['link']}")
+            print(f"     {item['source']} | {age_h:.0f}h ago")
+            if item.get("summary"):
+                print(f"     {item['summary']}")
+            if item.get("why"):
+                # Indented and arrowed, because this is the line the
+                # whole project exists for. It must not read as more
+                # summary - it is the part you could say out loud.
+                print(f"     -> {item['why']}")
+            print(f"     {item['link']}")
 
     print("\n" + "-" * 78)
     print("** = explains the mechanism    * = the people who shipped it")
 
 
+def report_dropped(dropped):
+    """
+    List what the relevance gate rejected, briefly.
+
+    Printed on purpose. A filter you cannot see is a filter you cannot argue
+    with, and this one is making a judgement call on your behalf every morning.
+    If it starts dropping things you wanted, this is how you find out.
+    """
+    if not dropped:
+        return
+    print(f"\nDropped as not worth reading ({len(dropped)}):")
+    for item in dropped:
+        print(f"  - [{item['lane']}] {item['title'][:68]}  ({item['source']})")
+
+
 def main():
     """
     Run the pipeline. Returns a process exit code: 0 healthy, 1 needs a human.
-    """
-    picked, stats = select_items(fetch_all())
-    report_selection(stats)
-    report_brief(picked)
 
-    if not picked:
+    Two different empty results must not be treated the same way, which is why
+    this returns a code at all - it will eventually run unattended:
+
+      * A genuinely quiet couple of days is SUCCESS. An honest thin brief is a
+        real answer.
+      * Finding stories and then failing to summarise them is FAILURE, and it
+        exits non-zero so a scheduled run goes red and reports itself rather
+        than leaving you thinking the field went quiet.
+    """
+    candidates, stats = select_items(fetch_all(), max_items=SUMMARISE_POOL)
+    report_selection(stats)
+
+    if not candidates:
         print(
             "\nNothing in the window. Widen LOOKBACK_HOURS in run.py if this "
             "happens on a day that was clearly not quiet."
         )
+        return 0
+
+    kept, dropped = summarise(candidates)
+
+    if not kept and not dropped:
+        print(
+            f"\nFAILED: {len(candidates)} stories were selected but none could "
+            "be summarised. See the log above."
+        )
         return 1
+
+    # Re-balance the survivors down to the real brief. The first balance chose
+    # a POOL, respecting the diet; this one chooses the BRIEF from whatever
+    # survived the relevance gate, respecting it again. Doing it twice is what
+    # stops the gate quietly reshaping the diet: if Gemini drops four Africa
+    # stories, Africa's slots are refilled from Africa, not handed to whatever
+    # lane happened to have leftovers.
+    picked = balance(kept, max_items=MAX_ITEMS)
+    report_brief(picked)
+    report_dropped(dropped)
     return 0
 
 
