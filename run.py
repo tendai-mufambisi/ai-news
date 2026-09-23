@@ -38,7 +38,7 @@ from datetime import datetime, timedelta, timezone
 
 import feedparser
 
-from feeds import FEEDS, LANE_INTENT, LANE_KEYWORDS, PRIMARY
+from feeds import ANALYSIS, FEEDS, LANE_INTENT, LANE_KEYWORDS, PRIMARY, REPORTING
 
 # --- Tunables -----------------------------------------------------------
 LOOKBACK_HOURS = 48      # how far back an item may be published
@@ -62,6 +62,11 @@ LANE_SHARE = {
 
 FEED_TIMEOUT = 25        # seconds before we give up on a single feed
 USER_AGENT = "Mozilla/5.0 (compatible; DailyAIBrief/1.0)"
+# Only used to retry a feed that answered 403/429 to the honest string above.
+BROWSER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+)
 
 socket.setdefaulttimeout(FEED_TIMEOUT)
 
@@ -160,8 +165,50 @@ _LANE_PATTERNS = {lane: _pattern(words) for lane, words in LANE_KEYWORDS.items()
 TITLE_WEIGHT = 3        # a lane named in the headline is what the story is about
 BLURB_WEIGHT = 1        # a mention in the standfirst is weaker evidence
 BLURB_SCAN_CHARS = 300  # some feeds ship the whole article; only read the opening
-PRIMARY_BONUS = 1       # from the people who did the work, not a write-up of it
 HOME_LANE_BONUS = 1     # a lane confirming its own feed's beat
+
+# What a source is worth, given that the point of this brief is to be able to
+# explain AI to a room. See the tier comment in feeds.py.
+TIER_BONUS = {ANALYSIS: 2, PRIMARY: 1, REPORTING: 0}
+
+# Vendor marketing, which reads exactly like news and is worth nothing here.
+#
+# The first two runs of this brief handed over "How Reactiv automates mobile
+# commerce 80% faster with Amazon Bedrock AgentCore" and "At AI Day Singapore,
+# NVIDIA and Partners Showcase AI Advancements Across Southeast Asia". Both
+# scored well. Both are press releases. Neither gives you a single thing you
+# could say on a stage, because neither explains a mechanism - they announce
+# that a customer is happy and that an event happened.
+#
+# This is a PENALTY, not a filter, and the distinction matters: vendor blogs
+# also publish genuinely good engineering writing, and a hard block would lose
+# it. A penalised story can still make the brief on a quiet day, it just has
+# to beat real analysis to get there.
+#
+# Each pattern below comes from a headline this brief actually surfaced or
+# that its feeds publish weekly. Add to it when a press release slips through;
+# do not try to guess the patterns in advance.
+MARKETING_PATTERNS = [
+    r"^how [\w .'-]{2,40}\b(?:automat|accelerat|scal|buil[dt]|reduc|improv|transform|cut|boost|sav|power|secur|deploy|migrat|modernis|moderniz|optimis|optimiz|unlock|enabl|streamlin|deliver)\w*\b.*\bwith\b",
+    # Event and meetup notices. Useful to Willison's readers, useless to a
+    # brief - a talk being scheduled is not a capability changing.
+    r"\bbirds of a feather\b", r"\bmeetup\b", r"\bworkshop\b",
+    r"\bspeaking at\b", r"\bi(?:'ll| will) be at\b", r"\bsee you (?:at|in)\b",
+    r"^\w{2,12} \w+ \d{1,2}(?:st|nd|rd|th)?\s*[:-]",
+    r"\bshowcase\w*\b", r"\bspotlight\b", r"\bcelebrat\w*\b",
+    r"\bpartners? (?:with|to)\b", r"\bin partnership with\b",
+    r"\bnow (?:generally )?available\b", r"\bnow supports?\b",
+    r"\bcustomer stor\w+\b", r"\bcase stud\w+\b", r"\bsuccess stor\w+\b",
+    r"\bwebinar\b", r"\bregister (?:now|today)\b", r"\bjoin us\b",
+    r"\baward\w*\b", r"\brecogni[sz]ed\b", r"\bnamed a leader\b",
+    r"\bsponsored\b", r"\bwhy .{0,30}choose\b",
+    r"\bat [A-Z]\w+ (?:Day|Summit|Conference|Expo|World|Connect)\b",
+]
+_MARKETING_RE = re.compile("|".join(MARKETING_PATTERNS), re.IGNORECASE)
+
+# Deliberately heavy: enough to sink a vendor post below any real story, not
+# so heavy that it can never appear. A press release scoring 5 lands on 2.
+MARKETING_PENALTY = 3
 
 # A story must reach this to make the brief. 3 = named its lane in the
 # headline, or 2 = a primary source that named it in the standfirst. Below
@@ -184,8 +231,9 @@ def classify(item):
         4  lane in the headline, confirmed in the standfirst
         3  lane in the headline
         1  lane only in the standfirst
-        +1 the source is primary (the lab, the vendor, the engineer)
+        +2 the source explains mechanisms (ANALYSIS), +1 if it shipped it
         +1 the lane agrees with the feed's own beat
+        -3 the headline reads as vendor marketing
 
     That last bonus is why "NVIDIA announces Q3 earnings" lands in
     Infrastructure rather than Business: both lanes match, and NVIDIA's feed
@@ -209,8 +257,11 @@ def classify(item):
     scored.sort(reverse=True)
     lanes = [lane for _, lane in scored]
     score = scored[0][0] if scored else 0
-    if score and item["tier"] == PRIMARY:
-        score += PRIMARY_BONUS
+    if score:
+        score += TIER_BONUS[item["tier"]]
+        if _MARKETING_RE.search(head):
+            item["marketing"] = True
+            score -= MARKETING_PENALTY
 
     # Nothing matched: fall back to the lane its publisher normally covers.
     # The story keeps its zero score, so it only reaches the brief on a day
@@ -233,6 +284,20 @@ def fetch_feed(feed):
         return []
 
     status = getattr(parsed, "status", None)
+
+    # Some publishers block unfamiliar user-agents rather than being down.
+    # Techpoint Africa answered 200 when probed and 403 on the first real run,
+    # which is a bot filter, not a dead feed. One retry with a browser string
+    # is an honest thing to do for a personal reader fetching a public feed
+    # once a day - it is not an attempt to get at anything not freely offered.
+    # If it still refuses, we take the no and move on.
+    if status in (403, 429):
+        try:
+            parsed = feedparser.parse(feed["url"], agent=BROWSER_AGENT)
+            status = getattr(parsed, "status", None)
+        except Exception:                         # noqa: BLE001
+            pass
+
     if status and status >= 400:
         print(f"  [skip] {feed['name']}: HTTP {status}")
         return []
@@ -254,6 +319,7 @@ def fetch_feed(feed):
                 "source": feed["name"],
                 "home_lane": feed["lane"],
                 "tier": feed["tier"],
+                "marketing": False,
                 "published": published_at(entry),
             }
         )
@@ -315,14 +381,23 @@ def balance(ranked, max_items=MAX_ITEMS, per_source=MAX_PER_SOURCE):
         queues[item["lane"]].append(item)
 
     quota = quotas(max_items)
-    picked, per_pub = [], {}
+    picked, per_pub, in_lane = [], {}, set()
 
     def take(lane, cap):
         """Claim this lane's best remaining story, or return False."""
         for pos, item in enumerate(queues[lane]):
+            # Never the same publisher twice in one lane. The global cap of 2
+            # is not enough protection here: Infrastructure has only two slots,
+            # so a cap of 2 let NVIDIA take the whole lane - twice, on two
+            # consecutive runs. A lane filled by one vendor is that vendor's
+            # newsletter, not a brief. A publisher may still appear in two
+            # DIFFERENT lanes, which is breadth rather than domination.
+            if (lane, item["source"]) in in_lane:
+                continue
             if per_pub.get(item["source"], 0) < cap:
                 picked.append(queues[lane].pop(pos))
                 per_pub[item["source"]] = per_pub.get(item["source"], 0) + 1
+                in_lane.add((lane, item["source"]))
                 return True
         return False
 
@@ -452,13 +527,13 @@ def report_brief(picked):
             # fine. Future-dated items are kept - they are the freshest thing
             # in the feed - they just print as 0h.
             age_h = max(0.0, (now - item["published"]).total_seconds() / 3600)
-            mark = "*" if item["tier"] == PRIMARY else " "
+            mark = {ANALYSIS: "**", PRIMARY: " *", REPORTING: "  "}[item["tier"]]
             print(f"\n  {mark} {item['title']}")
             print(f"    {item['source']} | {age_h:.0f}h ago | score {item['score']}")
             print(f"    {item['link']}")
 
     print("\n" + "-" * 78)
-    print("* = primary source (the people who did the work)")
+    print("** = explains the mechanism    * = the people who shipped it")
 
 
 def main():

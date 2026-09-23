@@ -39,20 +39,34 @@ about a data centre in Lagos can move from Frontier Models to Africa. The lane
 here is the fallback for stories the classifier cannot place.
 """
 
-# tier 2 = primary source: the lab, the vendor or the engineer who did the work.
-# tier 1 = reporting and analysis about someone else's work.
-# Used as a small ranking bonus, not a filter. A launch should be read from the
-# people who shipped it before it is read from someone summarising the launch.
-PRIMARY, REPORTING = 2, 1
+# Source tiers, used as a ranking bonus - never as a filter.
+#
+# tier 3 ANALYSIS   explains the mechanism: what changed, why, what it cost.
+# tier 2 PRIMARY    the lab or vendor that actually shipped the thing.
+# tier 1 REPORTING  a write-up of someone else's work.
+#
+# ANALYSIS outranks PRIMARY on purpose, and it is worth being clear why, since
+# the obvious instinct is the other way round.
+#
+# The goal of this brief is to be able to EXPLAIN AI on a stage, with real
+# examples. A vendor announcing a product tells you THAT something shipped.
+# Willison or Interconnects taking it apart tells you WHAT IT MEANS - which is
+# the only half you can actually say anything with. "OpenAI released X" is not
+# a talk. "Here is what X made possible that was not possible last month, and
+# here is what it now costs" is a talk.
+#
+# Primary sources still rank above reporting: read the launch from the people
+# who shipped it, not from someone summarising the launch.
+ANALYSIS, PRIMARY, REPORTING = 3, 2, 1
 
 FEEDS = [
     # --- Agents & coding: the 30%, your biggest lane -------------------
-    {"name": "Simon Willison",      "lane": "Agents & Coding", "tier": PRIMARY,   "url": "https://simonwillison.net/atom/everything/"},
-    {"name": "Latent Space",        "lane": "Agents & Coding", "tier": PRIMARY,   "url": "https://www.latent.space/feed"},
-    {"name": "Import AI",           "lane": "Agents & Coding", "tier": PRIMARY,   "url": "https://jack-clark.net/feed/"},
-    {"name": "Interconnects",       "lane": "Agents & Coding", "tier": PRIMARY,   "url": "https://www.interconnects.ai/feed"},
+    {"name": "Simon Willison",      "lane": "Agents & Coding", "tier": ANALYSIS,   "url": "https://simonwillison.net/atom/everything/"},
+    {"name": "Latent Space",        "lane": "Agents & Coding", "tier": ANALYSIS,   "url": "https://www.latent.space/feed"},
+    {"name": "Import AI",           "lane": "Agents & Coding", "tier": ANALYSIS,   "url": "https://jack-clark.net/feed/"},
+    {"name": "Interconnects",       "lane": "Agents & Coding", "tier": ANALYSIS,   "url": "https://www.interconnects.ai/feed"},
     {"name": "GitHub Blog",         "lane": "Agents & Coding", "tier": PRIMARY,   "url": "https://github.blog/ai-and-ml/feed/"},
-    {"name": "Pragmatic Engineer",  "lane": "Agents & Coding", "tier": PRIMARY,   "url": "https://newsletter.pragmaticengineer.com/feed"},
+    {"name": "Pragmatic Engineer",  "lane": "Agents & Coding", "tier": ANALYSIS,   "url": "https://newsletter.pragmaticengineer.com/feed"},
     # Points threshold, not the raw front page: 200+ is the bar at which a
     # story is something the whole field is discussing, not just noise.
     {"name": "Hacker News",         "lane": "Agents & Coding", "tier": REPORTING, "url": "https://hnrss.org/frontpage?points=200"},
@@ -67,8 +81,8 @@ FEEDS = [
     {"name": "Mistral",             "lane": "Frontier Models", "tier": PRIMARY,   "url": "https://mistral.ai/news/rss"},
     {"name": "Hugging Face",        "lane": "Frontier Models", "tier": PRIMARY,   "url": "https://huggingface.co/blog/feed.xml"},
     {"name": "Meta Engineering",    "lane": "Frontier Models", "tier": PRIMARY,   "url": "https://engineering.fb.com/feed/"},
-    {"name": "MIT Tech Review",     "lane": "Frontier Models", "tier": REPORTING, "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed"},
-    {"name": "Ars Technica",        "lane": "Frontier Models", "tier": REPORTING, "url": "https://arstechnica.com/ai/feed/"},
+    {"name": "MIT Tech Review",     "lane": "Frontier Models", "tier": ANALYSIS, "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed"},
+    {"name": "Ars Technica",        "lane": "Frontier Models", "tier": ANALYSIS, "url": "https://arstechnica.com/ai/feed/"},
     {"name": "The Verge",           "lane": "Frontier Models", "tier": REPORTING, "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"},
     {"name": "TechCrunch",          "lane": "Frontier Models", "tier": REPORTING, "url": "https://techcrunch.com/category/artificial-intelligence/feed/"},
 
@@ -92,16 +106,16 @@ FEEDS = [
     {"name": "Rest of World",       "lane": "Africa",          "tier": REPORTING, "url": "https://restofworld.org/feed/latest/"},
 
     # --- Security & safety: the 10% ------------------------------------
-    {"name": "Schneier",            "lane": "Security",        "tier": PRIMARY,   "url": "https://www.schneier.com/feed/atom/"},
-    {"name": "Krebs on Security",   "lane": "Security",        "tier": PRIMARY,   "url": "https://krebsonsecurity.com/feed/"},
+    {"name": "Schneier",            "lane": "Security",        "tier": ANALYSIS,   "url": "https://www.schneier.com/feed/atom/"},
+    {"name": "Krebs on Security",   "lane": "Security",        "tier": ANALYSIS,   "url": "https://krebsonsecurity.com/feed/"},
     {"name": "The Hacker News",     "lane": "Security",        "tier": REPORTING, "url": "https://feeds.feedburner.com/TheHackersNews"},
     {"name": "BleepingComputer",    "lane": "Security",        "tier": REPORTING, "url": "https://www.bleepingcomputer.com/feed/"},
-    {"name": "Normal Technology",   "lane": "Security",        "tier": PRIMARY,   "url": "https://www.normaltech.ai/feed"},
-    {"name": "Don't Worry",         "lane": "Security",        "tier": PRIMARY,   "url": "https://thezvi.substack.com/feed"},
+    {"name": "Normal Technology",   "lane": "Security",        "tier": ANALYSIS,   "url": "https://www.normaltech.ai/feed"},
+    {"name": "Don't Worry",         "lane": "Security",        "tier": ANALYSIS,   "url": "https://thezvi.substack.com/feed"},
 
     # --- Business & economics: the 10% ---------------------------------
-    {"name": "Stratechery",         "lane": "Business",        "tier": PRIMARY,   "url": "https://stratechery.com/feed/"},
-    {"name": "Tomasz Tunguz",       "lane": "Business",        "tier": PRIMARY,   "url": "https://tomtunguz.com/index.xml"},
+    {"name": "Stratechery",         "lane": "Business",        "tier": ANALYSIS,   "url": "https://stratechery.com/feed/"},
+    {"name": "Tomasz Tunguz",       "lane": "Business",        "tier": ANALYSIS,   "url": "https://tomtunguz.com/index.xml"},
     {"name": "Sifted",              "lane": "Business",        "tier": REPORTING, "url": "https://sifted.eu/feed"},
 ]
 
