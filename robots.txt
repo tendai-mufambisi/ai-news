@@ -1,0 +1,31 @@
+# Crawling is intentionally ALLOWED here.
+#
+# The page carries noindex (the meta tags in template.html and the
+# X-Robots-Tag in _headers). A crawler has to be able to fetch the page in
+# order to read that instruction. Blocking it with "Disallow: /" would have
+# the opposite effect of the one intended: the crawler never sees noindex, and
+# the URL can still be listed in search results.
+#
+# AI crawlers are blocked below. This page summarises publishers who restrict
+# their own content; it should not become somebody else's training data.
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /

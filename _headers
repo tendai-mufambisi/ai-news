@@ -1,0 +1,17 @@
+# Cloudflare Pages reads this file and sends these headers with every response.
+#
+# X-Robots-Tag does the same job as the noindex meta tag in template.html, but
+# at the HTTP level, so it also covers anything that is not HTML.
+#
+# Deliberately NOT using "Disallow: /" in robots.txt: that blocks crawling, and
+# a crawler that never fetches the page never sees the noindex instruction, so
+# the URL can still show up in results as a bare link. Letting crawlers in and
+# telling them not to index is the combination that actually de-indexes.
+#
+# Remove this file, robots.txt and the meta tags together if this ever becomes
+# a publication rather than a reading tool.
+
+/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff

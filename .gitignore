@@ -1,4 +1,9 @@
 aienv/
 .env
 __pycache__/
-index.html
+
+# NOTE: index.html is deliberately NOT ignored any more.
+#
+# It was, while this was a local-only tool. Now Cloudflare Pages serves the
+# page straight out of this repository, so the built file IS the deployment -
+# the daily GitHub Action commits it and that commit is what goes live.

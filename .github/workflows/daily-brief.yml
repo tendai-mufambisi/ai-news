@@ -1,0 +1,69 @@
+# Builds the brief every morning and commits the page.
+#
+# Cloudflare Pages watches this repository, so the commit made here is what
+# puts the new brief on ainews.digitsdigital.co.zw. Nothing deploys from a
+# laptop: the site updates whether or not a machine in Harare is switched on.
+#
+# The one secret this needs is GEMINI_API_KEY, set under
+# Settings -> Secrets and variables -> Actions. It is never written to a file
+# and never printed; summarise.py reads it straight from the environment.
+
+name: Daily AI Brief
+
+on:
+  schedule:
+    # 04:10 UTC = 06:10 CAT, so the brief is waiting before the day starts.
+    # Ten past the hour on purpose: GitHub's scheduler is busiest exactly on
+    # the hour and queues jobs for longer then.
+    - cron: "10 4 * * *"
+  # Lets you rebuild on demand from the Actions tab without waiting for
+  # tomorrow - useful the first time, and after any prompt change.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # A manual run and the scheduled one must never both try to commit the page.
+  group: daily-brief
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build the brief
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        # run.py exits non-zero when it found stories but could not summarise
+        # them. That must fail the job: leaving yesterday's correct page up is
+        # better than replacing it with an empty one, and a red run is how we
+        # find out. A genuinely quiet news day exits 0 and writes an honest
+        # thin page.
+        run: python run.py
+
+      - name: Commit the page if it changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          # Nothing to commit is a normal outcome - a rerun on the same news
+          # produces the same page. Do not fail the job over it.
+          if git diff --staged --quiet; then
+            echo "No change in the brief; nothing to deploy."
+            exit 0
+          fi
+          git commit -m "Brief: $(date -u +'%Y-%m-%d')"
+          git push
