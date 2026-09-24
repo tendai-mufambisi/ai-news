@@ -1,0 +1,19 @@
+{
+  // Cloudflare Workers Builds runs `npx wrangler deploy` and reads this file.
+  //
+  // The build failed before this existed with "Could not detect a directory
+  // containing static files", because the repository had no built page in it
+  // and nothing told Wrangler where to look.
+  //
+  // There is no "main" script on purpose: this is an assets-only Worker. It
+  // serves files and runs no code.
+  //
+  // Everything served lives in public/ rather than the repository root, so
+  // deploying cannot accidentally publish run.py, the workflow or the README
+  // as downloadable files. Only the page, its headers and robots.txt ship.
+  "name": "ai-news",
+  "compatibility_date": "2026-09-24",
+  "assets": {
+    "directory": "./public"
+  }
+}

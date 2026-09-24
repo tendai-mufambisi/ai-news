@@ -23,7 +23,10 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from feeds import ANALYSIS, LANE_INTENT, PRIMARY
 
 TEMPLATE = "template.html"
-OUTPUT = "index.html"
+# Everything served lives in public/. Keeping the built page out of the
+# repository root means a deploy cannot publish run.py or summarise.py as
+# downloadable files alongside it.
+OUTPUT = "public/index.html"
 
 # Harare is UTC+2 year round. A fixed offset is correct and safer than
 # zoneinfo here: Zimbabwe has no daylight saving, and Windows ships without
@@ -136,7 +139,8 @@ def render(items, dropped=None, lane_order=(), output=OUTPUT):
     )
 
     try:
-        path = Path(__file__).with_name(output)
+        path = Path(__file__).parent / output
+        path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(html, encoding="utf-8")
     except OSError as exc:
         print(f"  [fail] could not write {output}: {exc}")
