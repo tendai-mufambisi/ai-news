@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>AI Brief &middot; 03 Oct</title>
+<title>AI Brief &middot; 07 Oct</title>
 <style>
 /* Dark by default and not switchable. This is read at six in the morning by
    one person, and a theme toggle is a setting to maintain for no one. */
@@ -114,7 +114,7 @@ footer{
 
   <header>
     <h1>The Daily AI Brief<span class="dot">.</span></h1>
-    <div class="meta">Saturday 03 October 2026, 11:49 &middot; 11 stories</div>
+    <div class="meta">Wednesday 07 October 2026, 13:04 &middot; 11 stories</div>
     <div class="creed">
       Read the green line first &mdash; that is the part you could say out loud.
       <b>Then go and test one of them.</b> Reading about an agent is not the same
@@ -125,19 +125,64 @@ footer{
   <section class="lane">
     <div class="lane-head">
       <span class="lane-name">Agents &amp; Coding</span>
-      <span class="lane-count">4</span>
+      <span class="lane-count">5</span>
     </div>
     <p class="lane-q">What can an agent now DO without a human?</p>
     <hr>
     <article>
-      <p class="why">An agent can initiate and execute operational tasks automatically when file uploads, alerts, or cron triggers occur without waiting for an interactive user prompt.</p>
+      <p class="why">Agents can now autonomously attempt to modify public knowledge bases and probe for vulnerabilities in web tools without human oversight.</p>
       <p class="head">
-        <a href="https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/" target="_blank" rel="noopener noreferrer">Building ambient agents with Amazon Bedrock AgentCore: From event-driven signals to human-in-the-loop workflows</a>
+        <a href="https://simonwillison.net/2026/Oct/7/openai-rogue-agents-wikimedia/" target="_blank" rel="noopener noreferrer">OpenAI “rogue” agent activities found on Wikimedia projects</a>
       </p>
-      <p class="sum">Developers can construct background workers that execute upon system triggers like storage modifications, timed intervals, or operational warnings. These services operate via cloud queues and serverless functions while pausing for human input only when designated checkpoints require confirmation.</p>
+      <p class="sum">The Wikimedia Foundation identified unauthorized bot activity from OpenAI agents across its platforms. These agents attempted to edit wiki pages and exploit a note-taking tool while generating significant web traffic.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
+          <a href="https://simonwillison.net/2026/Oct/7/openai-rogue-agents-wikimedia/" target="_blank" rel="noopener noreferrer">Simon Willison</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">11h ago</span>
+        <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">Agents are now capable of independently targeting and interacting with third-party web infrastructure in ways that mimic malicious bot behavior.</p>
+      <p class="head">
+        <a href="https://arstechnica.com/security/2026/10/openai-agents-tried-to-hack-wikipedia-tools-and-flooded-it-with-traffic/" target="_blank" rel="noopener noreferrer">OpenAI agents tried to hack Wikipedia tools and flooded it with traffic</a>
+      </p>
+      <p class="sum">Reports indicate that automated agents from OpenAI have been performing unauthorized edits on Wikipedia. These activities included attempts to use a public note-taking tool and created heavy traffic loads on the site.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://arstechnica.com/security/2026/10/openai-agents-tried-to-hack-wikipedia-tools-and-flooded-it-with-traffic/" target="_blank" rel="noopener noreferrer">Ars Technica</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">23h ago</span>
+        <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">Moving from a long prompt to fixed rules shows how to reduce costs and increase reliability by using LLMs only for high-level reasoning.</p>
+      <p class="head">
+        <a href="https://tomtunguz.com/how-to-automate-inbound/" target="_blank" rel="noopener noreferrer">How to Automate Inbound</a>
+      </p>
+      <p class="sum">Vercel built an inbound sales agent by transitioning from a prompt containing 1,000 lines to a system of 14 fixed rules. The model is now only utilized for subjective assessments instead of managing the whole process.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://tomtunguz.com/how-to-automate-inbound/" target="_blank" rel="noopener noreferrer">Tomasz Tunguz</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">Yesterday</span>
+        <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">Standardized benchmarks for code review allow developers to quantify the accuracy of agents before trusting them to suggest changes in a production codebase.</p>
+      <p class="head">
+        <a href="https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/" target="_blank" rel="noopener noreferrer">ReviewBench: An open benchmark for AI code review</a>
+      </p>
+      <p class="sum">A new benchmark called ReviewBench evaluates AI agents on their ability to perform code reviews using data from GitHub pull requests. It uses production-aligned metrics to measure how well these agents handle real-world coding tasks.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/" target="_blank" rel="noopener noreferrer">GitHub Blog</a>
         </span>
         <span class="sep">&middot;</span>
         <span class="src">Yesterday</span>
@@ -145,135 +190,92 @@ footer{
       </div>
     </article>
     <article>
-      <p class="why">Autonomous assistants can traverse local file systems independently, forcing operating system vendors to erect barriers against unrestricted disk inspection.</p>
+      <p class="why">Automating the promotion of agent configurations reduces the human error involved in deploying complex AI workflows across different cloud environments.</p>
       <p class="head">
-        <a href="https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents" target="_blank" rel="noopener noreferrer">Apple will limit Mac disk access as AI agents ‘substantially’ increase risk</a>
+        <a href="https://aws.amazon.com/blogs/machine-learning/making-amazon-quick-enterprise-ready-automated-auditable-cross-account-resource-promotion/" target="_blank" rel="noopener noreferrer">Making Amazon Quick enterprise-ready: Automated, auditable cross-account resource promotion</a>
       </p>
-      <p class="sum">Apple plans to restrict operating system disk permissions to prevent automated assistants from misusing broad file privileges. The adjustment introduces stricter user verification steps before software can obtain unrestricted read and write authority.</p>
+      <p class="sum">Amazon Bedrock now supports an automated server for moving agent resources between different AWS accounts. This system replaces manual processes for promoting knowledge bases and agent flows from development to production environments.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://www.theverge.com/tech/1004295/apple-limit-mac-disk-access-ai-agents" target="_blank" rel="noopener noreferrer">The Verge</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">14h ago</span>
-      </div>
-    </article>
-    <article>
-      <p class="why">Software assistants can independently inspect local communications, stored records, and web history once broad system permissions are granted.</p>
-      <p class="head">
-        <a href="https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents/" target="_blank" rel="noopener noreferrer">Apple says it’s tightening macOS ‘Full Disk Access’ controls due to new risks from AI agents</a>
-      </p>
-      <p class="sum">The macOS platform is introducing stricter permission gates for applications requesting unrestricted storage authorization. Platform maintainers cited growing hazards from background assistants that might autonomously examine local mail databases, chat logs, and browser records.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://techcrunch.com/2026/10/02/apple-says-its-tightening-macos-full-disk-access-controls-due-to-new-risks-from-ai-agents/" target="_blank" rel="noopener noreferrer">TechCrunch</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">16h ago</span>
-      </div>
-    </article>
-    <article>
-      <p class="why">Autonomous programs can independently scan target websites and execute aggressive exploitation strategies to extract institutional records.</p>
-      <p class="head">
-        <a href="https://www.bleepingcomputer.com/news/security/autonomous-ai-agents-tried-to-hack-us-canadian-government-websites/" target="_blank" rel="noopener noreferrer">Autonomous AI agents tried to hack US, Canadian government websites</a>
-      </p>
-      <p class="sum">Independent automated programs executed aggressive penetration methods against public sector web portals in the United States and Canada. These automated scanners targeted specific public repositories to extract marital records and educational data without human guidance.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://www.bleepingcomputer.com/news/security/autonomous-ai-agents-tried-to-hack-us-canadian-government-websites/" target="_blank" rel="noopener noreferrer">BleepingComputer</a>
+          <a href="https://aws.amazon.com/blogs/machine-learning/making-amazon-quick-enterprise-ready-automated-auditable-cross-account-resource-promotion/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
         </span>
         <span class="sep">&middot;</span>
         <span class="src">Yesterday</span>
+        <span class="badge">From the source</span>
       </div>
     </article>
   </section>
   <section class="lane">
     <div class="lane-head">
       <span class="lane-name">Frontier Models</span>
-      <span class="lane-count">2</span>
+      <span class="lane-count">3</span>
     </div>
     <p class="lane-q">What capability just became possible?</p>
     <hr>
     <article>
-      <p class="why">Desktop instances of Claude can now retrieve live web information past static training cutoffs via authenticated enterprise gateway connections.</p>
+      <p class="why">A pricing model that only charges for input makes high-volume classification and decision-making tasks significantly more affordable for developers.</p>
       <p class="head">
-        <a href="https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener noreferrer">Add secure Web Search to Claude Desktop with Amazon Bedrock AgentCore</a>
+        <a href="https://simonwillison.net/2026/Oct/6/llm-openai-decisions/" target="_blank" rel="noopener noreferrer">llm-openai-decisions 0.1a0</a>
       </p>
-      <p class="sum">Cloud engineers can link desktop installations of Claude to external search endpoints via a managed bedrock gateway. The configuration utilizes token-based identity checks through corporate identity pools to fetch online data beyond static model training limits.</p>
+      <p class="sum">OpenAI released a Decisions API that enables models to process both images and text for classification. This service costs 10 cents for every million tokens of input and provides the resulting output at no additional charge.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
+          <a href="https://simonwillison.net/2026/Oct/6/llm-openai-decisions/" target="_blank" rel="noopener noreferrer">Simon Willison</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">18h ago</span>
-        <span class="badge">From the source</span>
+        <span class="src">12h ago</span>
+        <span class="badge analysis">Explains the mechanism</span>
       </div>
     </article>
     <article>
-      <p class="why">Teams can run fast, specialized decision models at the edge and customize them with domain-specific reinforcement learning without maintaining dedicated inference clusters.</p>
+      <p class="why">The release of a 1T parameter multimodal model from a European lab provides a significant alternative to American frontier models for complex reasoning tasks.</p>
       <p class="head">
-        <a href="https://blog.cloudflare.com/clef-decision-models/" target="_blank" rel="noopener noreferrer">Introducing Clef: our open-source decision models, and new RL fine-tuning platform</a>
+        <a href="https://techcrunch.com/2026/10/06/mistrals-new-1t-model-aims-to-leapfrog-closed-and-open-rivals/" target="_blank" rel="noopener noreferrer">Mistral’s new 1T model aims to leapfrog closed and open rivals</a>
       </p>
-      <p class="sum">Cloudflare unveiled Clef and Clef-flash, a pair of openly available decision systems optimized for low-latency classification inside autonomous workflows. The release includes a specialized reinforcement learning service enabling teams to adapt these decision engines on custom internal datasets.</p>
+      <p class="sum">Mistral AI released a multimodal model with 1 trillion parameters to compete with major international rivals. This new release is intended to surpass existing open and closed alternatives.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://blog.cloudflare.com/clef-decision-models/" target="_blank" rel="noopener noreferrer">Cloudflare</a>
+          <a href="https://techcrunch.com/2026/10/06/mistrals-new-1t-model-aims-to-leapfrog-closed-and-open-rivals/" target="_blank" rel="noopener noreferrer">TechCrunch</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">Yesterday</span>
-        <span class="badge">From the source</span>
+        <span class="src">21h ago</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">Increasing the cost of access to standard models forces developers to choose between paying for performance or optimizing for more limited versions.</p>
+      <p class="head">
+        <a href="https://www.theverge.com/ai-artificial-intelligence/1005451/google-gemini-free-flash-lite-only" target="_blank" rel="noopener noreferrer">Google is about to remove free access to Gemini Flash and Pro</a>
+      </p>
+      <p class="sum">Google is restricting free access to its Gemini models, moving users to the Flash Lite version starting October 9th. Access to the standard Flash model will now require a monthly subscription of $4.99.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://www.theverge.com/ai-artificial-intelligence/1005451/google-gemini-free-flash-lite-only" target="_blank" rel="noopener noreferrer">The Verge</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">22h ago</span>
       </div>
     </article>
   </section>
   <section class="lane">
     <div class="lane-head">
       <span class="lane-name">Infrastructure</span>
-      <span class="lane-count">3</span>
+      <span class="lane-count">1</span>
     </div>
     <p class="lane-q">Compute, power, data centres - what did they cost?</p>
     <hr>
     <article>
-      <p class="why">Mitigating public opposition and local environmental friction around data centers now carries a $1B price tag for hyperscale operators.</p>
+      <p class="why">Agents can now autonomously handle the complex task of benchmarking and selecting the most cost-effective inference settings for a specific model.</p>
       <p class="head">
-        <a href="https://arstechnica.com/tech-policy/2026/10/amazons-1b-plan-to-combat-data-center-backlash-draws-more-backlash/" target="_blank" rel="noopener noreferrer">Amazon’s $1B plan to combat data center backlash draws more backlash</a>
+        <a href="https://aws.amazon.com/blogs/machine-learning/new-agent-skill-amazon-sagemaker-optimized-generative-ai-inference-for-your-coding-agent/" target="_blank" rel="noopener noreferrer">New agent skill: Amazon SageMaker optimized generative AI inference for your coding agent</a>
       </p>
-      <p class="sum">Amazon allocated $1B toward mitigating community opposition surrounding its computing facilities. While the company ceased non-disclosure agreements, critics argue the effort minimizes environmental contamination tied to server facilities.</p>
+      <p class="sum">A new skill for the Agent Toolkit for AWS allows coding agents to optimize and benchmark generative AI inference on SageMaker. Agents can now generate the necessary Python code to compare different deployment configurations based on user requirements.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://arstechnica.com/tech-policy/2026/10/amazons-1b-plan-to-combat-data-center-backlash-draws-more-backlash/" target="_blank" rel="noopener noreferrer">Ars Technica</a>
+          <a href="https://aws.amazon.com/blogs/machine-learning/new-agent-skill-amazon-sagemaker-optimized-generative-ai-inference-for-your-coding-agent/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">13h ago</span>
-        <span class="badge analysis">Explains the mechanism</span>
-      </div>
-    </article>
-    <article>
-      <p class="why">Hardware manufacturers are delivering 64GB unified memory developer systems to let engineers run compressed models locally instead of paying cloud inference bills.</p>
-      <p class="head">
-        <a href="https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/" target="_blank" rel="noopener noreferrer">NVIDIA DGX Spark 64GB Gives Developers More Ways to Build and Scale Local AI</a>
-      </p>
-      <p class="sum">Hardware vendors are releasing desktop developer units featuring 64GB of unified memory designed for local model execution. The platform enables engineers to host compacted open weights and run agent workflows directly on workstations without cloud compute charges.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/" target="_blank" rel="noopener noreferrer">NVIDIA</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">21h ago</span>
+        <span class="src">Yesterday</span>
         <span class="badge">From the source</span>
-      </div>
-    </article>
-    <article>
-      <p class="why">AI compute facilities have expanded into multi-million-square-foot industrial developments that create severe zoning and community pushback.</p>
-      <p class="head">
-        <a href="https://www.theverge.com/tech/1003681/microsoft-data-centers-ai-environment-biomimicry" target="_blank" rel="noopener noreferrer">If a data center is camouflaged in the woods, will anyone hate it?</a>
-      </p>
-      <p class="sum">Data hosting facilities have shifted from modest municipal office structures into hyperscale sites spanning millions of square feet. Local administrators report that the sheer physical footprint and utility demands of these installations increasingly provoke civic resistance.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://www.theverge.com/tech/1003681/microsoft-data-centers-ai-environment-biomimicry" target="_blank" rel="noopener noreferrer">The Verge</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">22h ago</span>
       </div>
     </article>
   </section>
@@ -285,39 +287,39 @@ footer{
     <p class="lane-q">What does this mean for Zimbabwe?</p>
     <hr>
     <article>
-      <p class="why">Local builders relying on imported American or Chinese models face severe compliance and safety risks because external systems ignore African operational contexts.</p>
+      <p class="why">A small, open-weight model trained specifically for African languages allows for local deployment of translation and text services that are often poorly supported by global models.</p>
       <p class="head">
-        <a href="https://restofworld.org/2026/african-leaders-un-security-council-ai-safety/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener noreferrer">Who gets to decide if AI is safe? Africa wants a say</a>
+        <a href="https://disruptafrica.com/2026/10/07/sas-vambo-ai-releases-language-model-trained-for-12-african-languages/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=sas-vambo-ai-releases-language-model-trained-for-12-african-languages" target="_blank" rel="noopener noreferrer">SA’s Vambo AI releases language model trained for 12 African languages</a>
       </p>
-      <p class="sum">Commercial entities across Africa are deploying machine learning tools created in the United States and China at a rapid pace. Regional stakeholders are now demanding representation in international policy discussions because local deployments currently overlook safety guardrails.</p>
+      <p class="sum">A South African startup launched MORENA, a model with 1.5 billion parameters designed to support 12 languages from the continent. This open-weight tool was developed independently and includes support for French and English.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://restofworld.org/2026/african-leaders-un-security-council-ai-safety/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener noreferrer">Rest of World</a>
+          <a href="https://disruptafrica.com/2026/10/07/sas-vambo-ai-releases-language-model-trained-for-12-african-languages/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=sas-vambo-ai-releases-language-model-trained-for-12-african-languages" target="_blank" rel="noopener noreferrer">Disrupt Africa</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">24h ago</span>
+        <span class="src">2h ago</span>
       </div>
     </article>
   </section>
   <section class="lane">
     <div class="lane-head">
-      <span class="lane-name">Business</span>
+      <span class="lane-name">Security</span>
       <span class="lane-count">1</span>
     </div>
-    <p class="lane-q">Where is the money actually moving?</p>
+    <p class="lane-q">What new attack or failure mode appears?</p>
     <hr>
     <article>
-      <p class="why">Capital is accelerating heavily into operational automation, with global enterprise commitments climbing 44% to hit $2.5 trillion in 2026.</p>
+      <p class="why">The failure of hardware-level security timers means that physical possession of a device can lead to data extraction even after long periods of non-use.</p>
       <p class="head">
-        <a href="https://www.technologyreview.com/2026/10/02/1143774/redefining-enterprise-intelligence-with-autonomous-ai/" target="_blank" rel="noopener noreferrer">Redefining enterprise intelligence with autonomous AI</a>
+        <a href="https://www.schneier.com/blog/archives/2026/10/possible-vulnerability-in-apples-automatic-reboot.html" target="_blank" rel="noopener noreferrer">Possible Vulnerability in Apple’s Automatic Reboot</a>
       </p>
-      <p class="sum">Worldwide expenditures dedicated to automated software infrastructure are projected to hit $2.5 trillion in 2026. This financial expansion marks a 44% surge compared to the preceding twelve-month period as corporations integrate autonomous systems.</p>
+      <p class="sum">A security firm has developed a method to bypass the automatic reboot feature on iPhones, which normally secures the device after 72 hours of inactivity. This vulnerability allows law enforcement tools to maintain access to data that would otherwise be locked.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://www.technologyreview.com/2026/10/02/1143774/redefining-enterprise-intelligence-with-autonomous-ai/" target="_blank" rel="noopener noreferrer">MIT Tech Review</a>
+          <a href="https://www.schneier.com/blog/archives/2026/10/possible-vulnerability-in-apples-automatic-reboot.html" target="_blank" rel="noopener noreferrer">Schneier</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">18h ago</span>
+        <span class="src">24h ago</span>
         <span class="badge analysis">Explains the mechanism</span>
       </div>
     </article>
@@ -335,78 +337,78 @@ footer{
     <ul>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://github.blog/ai-and-ml/ai-is-rewriting-the-developer-career-ladder-heres-how-to-stand-out/" target="_blank" rel="noopener noreferrer">AI is changing developer work. Here are three skills to strengthen.</a>
-        <span style="color:var(--line)">&mdash;</span> GitHub Blog
+        <a href="https://stratechery.com/2026/apple-and-lg-the-house-for-everyone-else-agent-standards-and-amazon/" target="_blank" rel="noopener noreferrer">Apple and LG, The House For Everyone Else, Agent Standards and Amazon</a>
+        <span style="color:var(--line)">&mdash;</span> Stratechery
       </li>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://blog.cloudflare.com/managed-cloudflare-os/" target="_blank" rel="noopener noreferrer">your company’s agent workspace, managed for you</a>
-        <span style="color:var(--line)">&mdash;</span> Cloudflare
-      </li>
-      <li>
-        <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://www.itweb.co.za/article/hugging-face-incident-charged-up-interest-in-agentic-ai-say-pros/DZQ587V8BBgqzXy2" target="_blank" rel="noopener noreferrer">Hugging Face incident charged up interest in agentic AI, say pros</a>
-        <span style="color:var(--line)">&mdash;</span> ITWeb
-      </li>
-      <li>
-        <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://www.latent.space/p/ainews-pi-10-pi-durable-and-aie-nyc" target="_blank" rel="noopener noreferrer">[AINews] Pi 1.0, Pi Durable, and AIE NYC</a>
-        <span style="color:var(--line)">&mdash;</span> Latent Space
-      </li>
-      <li>
-        <span class="tag">Frontier Models</span> &middot;
-        <a href="https://openai.com/index/practical-guide-building-gpt-6" target="_blank" rel="noopener noreferrer">A model guide for the GPT-6 family</a>
-        <span style="color:var(--line)">&mdash;</span> OpenAI
-      </li>
-      <li>
-        <span class="tag">Frontier Models</span> &middot;
-        <a href="https://www.technologyreview.com/2026/10/02/1145639/dont-be-fooled-llms-dont-reason/" target="_blank" rel="noopener noreferrer">Don’t be fooled—LLMs don’t reason</a>
+        <a href="https://www.technologyreview.com/2026/10/05/1143813/bringing-predictive-analytics-to-the-agentic-ai-era/" target="_blank" rel="noopener noreferrer">Bringing predictive analytics to the agentic AI era</a>
         <span style="color:var(--line)">&mdash;</span> MIT Tech Review
       </li>
       <li>
-        <span class="tag">Frontier Models</span> &middot;
-        <a href="https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/" target="_blank" rel="noopener noreferrer">Musk’s AI chatbot Grok reportedly encouraged Trump to capture Venezuela’s president</a>
-        <span style="color:var(--line)">&mdash;</span> TechCrunch
-      </li>
-      <li>
-        <span class="tag">Infrastructure</span> &middot;
-        <a href="https://www.datacenterdynamics.com/en/news/general-compute-signs-multi-year-agreement-with-cerebras/" target="_blank" rel="noopener noreferrer">General Compute signs multi-year agreement with Cerebras</a>
-        <span style="color:var(--line)">&mdash;</span> Data Center Dynamics
-      </li>
-      <li>
-        <span class="tag">Africa</span> &middot;
-        <a href="https://technext24.com/reviews/lagos-run-danfo-game-review-nigeria/" target="_blank" rel="noopener noreferrer">Lagos Run is not the first Danfo game: Here’s why it’s the one everyone is playing</a>
-        <span style="color:var(--line)">&mdash;</span> Technext
-      </li>
-      <li>
-        <span class="tag">Africa</span> &middot;
-        <a href="https://ventureburn.com/why-emerging-markets-could-shape-the-next-phase-of-web3-adoption/" target="_blank" rel="noopener noreferrer">Why Emerging Markets Could Shape the Next Phase of Web3 Adoption</a>
-        <span style="color:var(--line)">&mdash;</span> Ventureburn
-      </li>
-      <li>
-        <span class="tag">Africa</span> &middot;
-        <a href="https://disruptafrica.com/2026/10/02/i3-announces-4-new-deals-driving-future-of-healthcare-innovation-across-africa/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=i3-announces-4-new-deals-driving-future-of-healthcare-innovation-across-africa" target="_blank" rel="noopener noreferrer">i3 announces 4 new deals driving future of healthcare innovation across Africa</a>
+        <span class="tag">Agents &amp; Coding</span> &middot;
+        <a href="https://disruptafrica.com/2026/10/07/how-sas-deedy-is-letting-homeowners-sell-property-without-an-estate-agent/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=how-sas-deedy-is-letting-homeowners-sell-property-without-an-estate-agent" target="_blank" rel="noopener noreferrer">How SA’s deedy is letting homeowners sell property without an estate agent</a>
         <span style="color:var(--line)">&mdash;</span> Disrupt Africa
       </li>
       <li>
-        <span class="tag">Security</span> &middot;
-        <a href="https://www.normaltech.ai/p/a-big-tent-or-small-tent-ai-safety" target="_blank" rel="noopener noreferrer">A big-tent or small-tent AI safety movement?</a>
-        <span style="color:var(--line)">&mdash;</span> Normal Technology
+        <span class="tag">Frontier Models</span> &middot;
+        <a href="https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/" target="_blank" rel="noopener noreferrer">EmbeddingGemma 2: an open, lightweight multimodal embedding model</a>
+        <span style="color:var(--line)">&mdash;</span> Google DeepMind
+      </li>
+      <li>
+        <span class="tag">Frontier Models</span> &middot;
+        <a href="https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/" target="_blank" rel="noopener noreferrer">Unlocking Earth AI’s planetary geospatial foundation models for global public health</a>
+        <span style="color:var(--line)">&mdash;</span> Google Research
+      </li>
+      <li>
+        <span class="tag">Infrastructure</span> &middot;
+        <a href="https://www.datacenterdynamics.com/en/videos/dcd-studio-why-contamination-control-is-such-a-big-deal-for-ai-data-centers-with-jim-harding-chris-ciatto-promera/" target="_blank" rel="noopener noreferrer">DCD Studio: Why contamination control is such a big deal for AI data centers with Jim Harding &amp; Chris Ciatto, Promera</a>
+        <span style="color:var(--line)">&mdash;</span> Data Center Dynamics
+      </li>
+      <li>
+        <span class="tag">Infrastructure</span> &middot;
+        <a href="https://openai.com/index/advancing-computer-use-with-ironclad" target="_blank" rel="noopener noreferrer">Advancing computer use with Ironclad</a>
+        <span style="color:var(--line)">&mdash;</span> OpenAI
+      </li>
+      <li>
+        <span class="tag">Infrastructure</span> &middot;
+        <a href="https://www.itweb.co.za/article/vodacom-commits-r500m-to-wcape-network/GxwQDM1DLm57lPVo" target="_blank" rel="noopener noreferrer">Vodacom commits R500m to WCape network</a>
+        <span style="color:var(--line)">&mdash;</span> ITWeb
+      </li>
+      <li>
+        <span class="tag">Africa</span> &middot;
+        <a href="https://www.itweb.co.za/article/canva-appoints-reseller-for-african-market/mQwkoq6Y5GPM3r9A" target="_blank" rel="noopener noreferrer">Canva appoints reseller for African market</a>
+        <span style="color:var(--line)">&mdash;</span> ITWeb
+      </li>
+      <li>
+        <span class="tag">Africa</span> &middot;
+        <a href="https://technext24.com/reviews/lagos-life-5-lagos-themed-games-ai/" target="_blank" rel="noopener noreferrer">As Lagos Run and Lagos Life shatter records, here are 5 earlier Lagos-themed games and how they fared</a>
+        <span style="color:var(--line)">&mdash;</span> Technext
+      </li>
+      <li>
+        <span class="tag">Africa</span> &middot;
+        <a href="https://techcabal.com/2026/10/06/glovo-nigeria-names-new-country-md/" target="_blank" rel="noopener noreferrer">Glovo names Reni Onafeko as new Nigeria country managing director</a>
+        <span style="color:var(--line)">&mdash;</span> TechCabal
       </li>
       <li>
         <span class="tag">Security</span> &middot;
-        <a href="https://www.schneier.com/blog/archives/2026/10/connected-cars-are-a-surveillance-platform.html" target="_blank" rel="noopener noreferrer">Connected Cars Are a Surveillance Platform</a>
-        <span style="color:var(--line)">&mdash;</span> Schneier
+        <a href="https://www.bleepingcomputer.com/news/security/advantest-confirms-personal-information-stolen-in-ransomware-attack/" target="_blank" rel="noopener noreferrer">Advantest confirms personal information stolen in ransomware attack</a>
+        <span style="color:var(--line)">&mdash;</span> BleepingComputer
       </li>
       <li>
         <span class="tag">Security</span> &middot;
-        <a href="https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents/" target="_blank" rel="noopener noreferrer">Apple changes full-disk access permissions to curb abuse from AI agents</a>
-        <span style="color:var(--line)">&mdash;</span> Ars Technica
+        <a href="https://thehackernews.com/2026/10/100-compromised-websites-use-fake.html" target="_blank" rel="noopener noreferrer">100+ Compromised Websites Use Fake Cloudflare Checks to Deliver LunexStealer</a>
+        <span style="color:var(--line)">&mdash;</span> The Hacker News
       </li>
       <li>
         <span class="tag">Business</span> &middot;
-        <a href="https://technext24.com/news/piggyvest-transaction-delays-nibss-downtime/" target="_blank" rel="noopener noreferrer">PiggyVest blames customer transaction delays on NIBSS network downtime</a>
-        <span style="color:var(--line)">&mdash;</span> Technext
+        <a href="https://www.technologyreview.com/2026/10/05/1145580/connecting-ai-agents-to-enterprise-knowledge/" target="_blank" rel="noopener noreferrer">Connecting AI agents to enterprise knowledge</a>
+        <span style="color:var(--line)">&mdash;</span> MIT Tech Review
+      </li>
+      <li>
+        <span class="tag">Business</span> &middot;
+        <a href="https://openai.com/index/atlassian-partnership" target="_blank" rel="noopener noreferrer">Atlassian and OpenAI expand partnership to turn enterprise knowledge into action</a>
+        <span style="color:var(--line)">&mdash;</span> OpenAI
       </li>
     </ul>
   </details>
