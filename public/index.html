@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>AI Brief &middot; 20 Oct</title>
+<title>AI Brief &middot; 21 Oct</title>
 <style>
 /* Dark by default and not switchable. This is read at six in the morning by
    one person, and a theme toggle is a setting to maintain for no one. */
@@ -114,7 +114,7 @@ footer{
 
   <header>
     <h1>The Daily AI Brief<span class="dot">.</span></h1>
-    <div class="meta">Tuesday 20 October 2026, 11:26 &middot; 7 stories</div>
+    <div class="meta">Wednesday 21 October 2026, 11:22 &middot; 12 stories</div>
     <div class="creed">
       Read the green line first &mdash; that is the part you could say out loud.
       <b>Then go and test one of them.</b> Reading about an agent is not the same
@@ -125,37 +125,82 @@ footer{
   <section class="lane">
     <div class="lane-head">
       <span class="lane-name">Agents &amp; Coding</span>
-      <span class="lane-count">2</span>
+      <span class="lane-count">5</span>
     </div>
     <p class="lane-q">What can an agent now DO without a human?</p>
     <hr>
     <article>
-      <p class="why">Agents can execute multi-turn conversational loops with drastically lower latency because the engine reuses previously calculated context instead of recalculating it each turn.</p>
+      <p class="why">Agents can now participate in the automated trading and allocation of physical compute resources without human intervention.</p>
       <p class="head">
-        <a href="https://aws.amazon.com/blogs/machine-learning/improve-ttft-for-multi-turn-agentic-workloads-with-bi-directional-kv-transfer-in-vllm/" target="_blank" rel="noopener noreferrer">Improve TTFT for multi-turn agentic workloads with bi-directional KV transfer in vLLM</a>
+        <a href="https://www.latent.space/p/sfcompute2" target="_blank" rel="noopener noreferrer">The Programmable Data Center — Evan Conrad, SF Compute</a>
       </p>
-      <p class="sum">Transferring cached attention states between prefill and generation nodes stops vLLM from reprocessing conversation history across sequential agent turns. Benchmarks on Amazon EC2 P5en machines show this cuts time to first token by up to 1.6x on Qwen3-32B and 3.3x on GLM-5-FP8.</p>
+      <p class="sum">Data centers are evolving into programmable environments where compute resources can be traded and settled automatically. This shift allows for independent markets to manage physical hardware through software interfaces.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://aws.amazon.com/blogs/machine-learning/improve-ttft-for-multi-turn-agentic-workloads-with-bi-directional-kv-transfer-in-vllm/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
+          <a href="https://www.latent.space/p/sfcompute2" target="_blank" rel="noopener noreferrer">Latent Space</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">17h ago</span>
-        <span class="badge">From the source</span>
+        <span class="src">14h ago</span>
+        <span class="badge analysis">Explains the mechanism</span>
       </div>
     </article>
     <article>
-      <p class="why">Specialized agents can execute complex multi-step pipelines autonomously because separating basic task dispatch from domain analysis prevents the coordinator from failing.</p>
+      <p class="why">Agents can now handle the core logic and strategy of coding tasks, potentially reducing the human role to high-level oversight.</p>
       <p class="head">
-        <a href="https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/" target="_blank" rel="noopener noreferrer">The Thin Orchestrator: How We Made Our AI Agents More Reliable by Giving the Router Less to Do</a>
+        <a href="https://simonwillison.net/2026/Oct/19/my-obituary-for-programming/" target="_blank" rel="noopener noreferrer">My obituary for programming</a>
       </p>
-      <p class="sum">Meta improved data pipeline execution by intentionally restricting its central orchestration layer to basic routing and reliability checks. Complex reasoning tasks are delegated downstream to specialized sub-agents rather than handled by a single planner.</p>
+      <p class="sum">The rise of automated coding tools is changing the nature of software development from solving logic puzzles to managing systems. While productivity increases, the traditional role of the programmer as a primary problem solver is being redefined.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/" target="_blank" rel="noopener noreferrer">Meta Engineering</a>
+          <a href="https://simonwillison.net/2026/Oct/19/my-obituary-for-programming/" target="_blank" rel="noopener noreferrer">Simon Willison</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">18h ago</span>
+        <span class="src">Yesterday</span>
+        <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">This data suggests that agents are not yet providing a guaranteed increase in software delivery speed for most engineering teams.</p>
+      <p class="head">
+        <a href="https://newsletter.pragmaticengineer.com/p/whats-the-roi-of-software-engineers" target="_blank" rel="noopener noreferrer">What’s the ROI of software engineers’ spending on AI?</a>
+      </p>
+      <p class="sum">A study of 27 companies examined whether increased investment in AI tools actually improved the speed of software delivery. The findings suggest that higher spending does not always correlate with a significant rise in pull request output.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://newsletter.pragmaticengineer.com/p/whats-the-roi-of-software-engineers" target="_blank" rel="noopener noreferrer">Pragmatic Engineer</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">16h ago</span>
+        <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">Agents can now navigate and interact with web infrastructure designed specifically for machine consumption rather than human readability.</p>
+      <p class="head">
+        <a href="https://www.technologyreview.com/2026/10/19/1147186/making-the-internet-better-for-ai-agents-might-make-it-worse-for-everyone-else/" target="_blank" rel="noopener noreferrer">Making the internet better for AI agents might make it worse for everyone else</a>
+      </p>
+      <p class="sum">The internet is being restructured to accommodate automated agents that scrape and process web content. These changes may improve efficiency for bots while making the browsing experience more difficult for human users.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://www.technologyreview.com/2026/10/19/1147186/making-the-internet-better-for-ai-agents-might-make-it-worse-for-everyone-else/" target="_blank" rel="noopener noreferrer">MIT Tech Review</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">Yesterday</span>
+        <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">Agents can now autonomously update project timelines and task statuses by accessing live work management data through standardized protocols.</p>
+      <p class="head">
+        <a href="https://aws.amazon.com/blogs/machine-learning/work-management-context-for-ai-agents-with-smartsheet-mcp-on-aws/" target="_blank" rel="noopener noreferrer">Work management context for AI agents with Smartsheet MCP on AWS</a>
+      </p>
+      <p class="sum">A new protocol allows automated agents to interact directly with project management data stored in Smartsheet. This integration enables agents to read and update live work records without requiring a human to switch between different software tools.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://aws.amazon.com/blogs/machine-learning/work-management-context-for-ai-agents-with-smartsheet-mcp-on-aws/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">15h ago</span>
         <span class="badge">From the source</span>
       </div>
     </article>
@@ -168,48 +213,48 @@ footer{
     <p class="lane-q">What capability just became possible?</p>
     <hr>
     <article>
-      <p class="why">The frontier model demonstrated the ability to self-direct and explore an environment across 30 hours without human prompting or task definitions.</p>
+      <p class="why">Models can now leverage personal context from a user&#39;s digital life to provide real-time assistance within the physical environment of a car.</p>
       <p class="head">
-        <a href="https://www.technologyreview.com/2026/10/19/1147095/ai-stranded-claude-virtual-desert-island-play/" target="_blank" rel="noopener noreferrer">AI researchers stranded Claude on a virtual desert island. It started to “play.”</a>
+        <a href="https://arstechnica.com/google/2026/10/geminis-personal-intelligence-is-coming-to-cars/" target="_blank" rel="noopener noreferrer">Gemini&#39;s Personal Intelligence is coming to cars</a>
       </p>
-      <p class="sum">Researchers left instances of Claude Opus 4.7 inside an isolated virtual island environment for 30 hours without human direction. In the absence of assigned tasks, the models engaged in spontaneous exploration and activity resembling play.</p>
+      <p class="sum">Google is integrating its latest language model into vehicle systems to provide more personalized assistance. This update allows the system to access user data from various apps to answer specific queries while driving.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://www.technologyreview.com/2026/10/19/1147095/ai-stranded-claude-virtual-desert-island-play/" target="_blank" rel="noopener noreferrer">MIT Tech Review</a>
+          <a href="https://arstechnica.com/google/2026/10/geminis-personal-intelligence-is-coming-to-cars/" target="_blank" rel="noopener noreferrer">Ars Technica</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">Yesterday</span>
+        <span class="src">13h ago</span>
         <span class="badge analysis">Explains the mechanism</span>
       </div>
     </article>
     <article>
-      <p class="why">Recommendation systems can now evaluate ad matches through holistic language model reasoning over a stable vocabulary rather than calculating single-purpose numerical scores.</p>
+      <p class="why">Models can now perform complex qualitative assessments of investment opportunities that closely match the standards of senior human professionals.</p>
       <p class="head">
-        <a href="https://engineering.fb.com/2026/10/19/ml-applications/genrecs-tokenization-transforming-ads-recommendation-at-meta-with-stable-model-vocabulary/" target="_blank" rel="noopener noreferrer">GenRecs Tokenization: Transforming Ads Recommendation at Meta with Stable Model Vocabulary</a>
+        <a href="https://openai.com/index/terminal-x" target="_blank" rel="noopener noreferrer">Terminal X matches senior investor judgment 88.6% with GPT-6.1</a>
       </p>
-      <p class="sum">Meta introduced GenRecs Tokenization to represent advertising inventories within a unified vocabulary suitable for large language models. This representation enables the recommendation engine to reason across user history and creative text together rather than relying on discrete ad scoring.</p>
+      <p class="sum">A new evaluation agent using the latest model achieved high alignment with the judgment of experienced investors. The system identified 25% more deviations from investment mandates than previous methods using GPT-6.1 Sol.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://engineering.fb.com/2026/10/19/ml-applications/genrecs-tokenization-transforming-ads-recommendation-at-meta-with-stable-model-vocabulary/" target="_blank" rel="noopener noreferrer">Meta Engineering</a>
+          <a href="https://openai.com/index/terminal-x" target="_blank" rel="noopener noreferrer">OpenAI</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">17h ago</span>
+        <span class="src">Yesterday</span>
         <span class="badge">From the source</span>
       </div>
     </article>
     <article>
-      <p class="why">Developers can pipe Claude outputs directly into production databases and software APIs with absolute schema adherence, eliminating JSON parsing failures.</p>
+      <p class="why">It is now possible to use standardized frameworks to evaluate the decision-making capabilities of agents across diverse scenarios.</p>
       <p class="head">
-        <a href="https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/" target="_blank" rel="noopener noreferrer">Structured outputs for Anthropic Claude models on Amazon Bedrock</a>
+        <a href="https://www.normaltech.ai/p/new-paper-emerging-trends-in-ai-agent" target="_blank" rel="noopener noreferrer">New paper: Emerging trends in AI agent evaluation</a>
       </p>
-      <p class="sum">Amazon Bedrock now natively enforces structured JSON outputs for all Anthropic Claude models across its runtime endpoints. The system guarantees that responses adhere to defined schemas without requiring custom parsing scripts or retry handlers.</p>
+      <p class="sum">Researchers have documented new methodologies for measuring the performance and reliability of automated agents. The study explores the evolving ecosystem of tools used to test how these systems handle complex tasks.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
+          <a href="https://www.normaltech.ai/p/new-paper-emerging-trends-in-ai-agent" target="_blank" rel="noopener noreferrer">Normal Technology</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">10h ago</span>
-        <span class="badge">From the source</span>
+        <span class="src">Yesterday</span>
+        <span class="badge analysis">Explains the mechanism</span>
       </div>
     </article>
   </section>
@@ -221,39 +266,85 @@ footer{
     <p class="lane-q">Compute, power, data centres - what did they cost?</p>
     <hr>
     <article>
-      <p class="why">Pairing prompt caching with intelligent model routing lowered inference costs by 68% while increasing overall review execution speeds.</p>
+      <p class="why">Serving costs become more predictable because the memory required for each sequence remains fixed at 29.5 MB even as context grows.</p>
+      <p class="head">
+        <a href="https://aws.amazon.com/blogs/machine-learning/beyond-the-kv-cache-training-and-serving-i14s-laplace-3b-linear-attention-model-on-aws-trainium2-with-native-pytorch/" target="_blank" rel="noopener noreferrer">Beyond the KV cache: Training and serving i14’s Laplace 3B linear attention model on AWS Trainium2 with native PyTorch</a>
+      </p>
+      <p class="sum">A new linear attention model maintains a constant memory footprint regardless of the length of the input sequence. This architecture avoids the memory growth issues typical of standard transformer models during inference.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://aws.amazon.com/blogs/machine-learning/beyond-the-kv-cache-training-and-serving-i14s-laplace-3b-linear-attention-model-on-aws-trainium2-with-native-pytorch/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">12h ago</span>
+        <span class="badge">From the source</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">Inference costs can be reduced by 68% through aggressive optimization techniques like caching and routing tasks to smaller, cheaper models.</p>
       <p class="head">
         <a href="https://blog.cloudflare.com/obsessive-inference-optimization/" target="_blank" rel="noopener noreferrer">Cutting our inference bill by 68% by being obsessive about optimization</a>
       </p>
-      <p class="sum">Cloudflare investigated a doubling of operating expenses in their automated code inspection tool after tracking unexpected token consumption. By implementing cached prompt prefixes alongside dynamic request routing to cheaper models, the team lowered inference expenses by 68%.</p>
+      <p class="sum">Cloudflare reduced its operational costs for an AI-powered code review tool by implementing prompt caching and smarter model selection. These optimizations allowed them to process requests faster while lowering their monthly expenses by 68%.</p>
       <div class="foot">
         <span class="src">
           <a href="https://blog.cloudflare.com/obsessive-inference-optimization/" target="_blank" rel="noopener noreferrer">Cloudflare</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">14h ago</span>
+        <span class="src">Yesterday</span>
         <span class="badge">From the source</span>
       </div>
     </article>
+  </section>
+  <section class="lane">
+    <div class="lane-head">
+      <span class="lane-name">Security</span>
+      <span class="lane-count">1</span>
+    </div>
+    <p class="lane-q">What new attack or failure mode appears?</p>
+    <hr>
     <article>
-      <p class="why">Supplying power for large-scale data centres now involves regional nuclear commitments to build up to 960MW of dedicated modular capacity.</p>
+      <p class="why">A new physical attack vector allows for the remote unlocking of mobile devices, bypassing modern operating system security features.</p>
       <p class="head">
-        <a href="https://www.datacenterdynamics.com/en/news/amazon-and-aep-to-explore-deployment-of-up-to-960mw-of-x-energy-smrs-in-indiana/" target="_blank" rel="noopener noreferrer">Amazon and AEP to explore deployment of up to 960MW of X-energy SMRs in Indiana</a>
+        <a href="https://www.schneier.com/blog/archives/2026/10/possible-new-cellebrite-iphone-radio-zero-day.html" target="_blank" rel="noopener noreferrer">Possible new Cellebrite iPhone Radio Zero-Day</a>
       </p>
-      <p class="sum">Amazon partnered with regional energy firm AEP to explore deploying small modular nuclear reactors across Indiana. The agreement aims to deliver up to 960MW of generation capacity using reactors built by X-energy.</p>
+      <p class="sum">A leaked document suggests a new hardware-based method for unlocking iPhones that bypasses standard security restrictions. This tool reportedly works from a distance of about 8 meters and remains effective even when specific device protections are enabled.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://www.datacenterdynamics.com/en/news/amazon-and-aep-to-explore-deployment-of-up-to-960mw-of-x-energy-smrs-in-indiana/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a>
+          <a href="https://www.schneier.com/blog/archives/2026/10/possible-new-cellebrite-iphone-radio-zero-day.html" target="_blank" rel="noopener noreferrer">Schneier</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">17h ago</span>
+        <span class="src">22h ago</span>
+        <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+  </section>
+  <section class="lane">
+    <div class="lane-head">
+      <span class="lane-name">Business</span>
+      <span class="lane-count">1</span>
+    </div>
+    <p class="lane-q">Where is the money actually moving?</p>
+    <hr>
+    <article>
+      <p class="why">New laser-based interconnects could significantly reduce the latency and energy costs associated with moving data between AI chips.</p>
+      <p class="head">
+        <a href="https://sifted.eu/articles/photon-bridge-laser-device-ai-chips-seed-round/" target="_blank" rel="noopener noreferrer">Exclusive: Photon Bridge raises €10m to build laser devices that connect AI chips</a>
+      </p>
+      <p class="sum">A startup has secured 10 million euros to develop laser-based devices designed to connect AI processors. This technology aims to improve the speed and efficiency of data transfer between chips in large computing clusters.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://sifted.eu/articles/photon-bridge-laser-device-ai-chips-seed-round/" target="_blank" rel="noopener noreferrer">Sifted</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">4h ago</span>
       </div>
     </article>
   </section>
 
 
   <details class="dropped">
-    <summary>19 stories dropped as not worth reading</summary>
+    <summary>9 stories dropped as not worth reading</summary>
     <p>
       These reached the shortlist and were then rejected &mdash; vendor case studies,
       event notices, or business stories with no AI substance. Shown because a filter
@@ -263,43 +354,13 @@ footer{
     <ul>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://simonwillison.net/2026/Oct/19/my-obituary-for-programming/" target="_blank" rel="noopener noreferrer">My obituary for programming</a>
-        <span style="color:var(--line)">&mdash;</span> Simon Willison
-      </li>
-      <li>
-        <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/" target="_blank" rel="noopener noreferrer">How to continue a GitHub Copilot app session in VS Code</a>
+        <a href="https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/" target="_blank" rel="noopener noreferrer">How 3 Java Champions are using GitHub Copilot for increased productivity</a>
         <span style="color:var(--line)">&mdash;</span> GitHub Blog
       </li>
       <li>
-        <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://www.technologyreview.com/2026/10/19/1147186/making-the-internet-better-for-ai-agents-might-make-it-worse-for-everyone-else/" target="_blank" rel="noopener noreferrer">Making the internet better for AI agents might make it worse for everyone else</a>
+        <span class="tag">Infrastructure</span> &middot;
+        <a href="https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/" target="_blank" rel="noopener noreferrer">A visit to Samsung’s massive new semiconductor hub</a>
         <span style="color:var(--line)">&mdash;</span> MIT Tech Review
-      </li>
-      <li>
-        <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://arstechnica.com/gaming/2026/10/ai-game-clones-are-making-indie-developers-afraid-to-show-their-work/" target="_blank" rel="noopener noreferrer">AI game clones are making indie developers afraid to show their work</a>
-        <span style="color:var(--line)">&mdash;</span> Ars Technica
-      </li>
-      <li>
-        <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://openai.com/index/low-resource-programming-languages" target="_blank" rel="noopener noreferrer">Advancing coding in low‑resource programming languages</a>
-        <span style="color:var(--line)">&mdash;</span> OpenAI
-      </li>
-      <li>
-        <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://disruptafrica.com/2026/10/20/sas-injini-launches-edtech-for-employment-incubation-programme/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=sas-injini-launches-edtech-for-employment-incubation-programme" target="_blank" rel="noopener noreferrer">SA’s Injini launches EdTech for Employment incubation programme</a>
-        <span style="color:var(--line)">&mdash;</span> Disrupt Africa
-      </li>
-      <li>
-        <span class="tag">Frontier Models</span> &middot;
-        <a href="https://www.normaltech.ai/p/new-paper-emerging-trends-in-ai-agent" target="_blank" rel="noopener noreferrer">New paper: Emerging trends in AI agent evaluation</a>
-        <span style="color:var(--line)">&mdash;</span> Normal Technology
-      </li>
-      <li>
-        <span class="tag">Frontier Models</span> &middot;
-        <a href="https://simonwillison.net/2026/Oct/18/llm-tools-datasette/" target="_blank" rel="noopener noreferrer">llm-tools-datasette 0.1.1</a>
-        <span style="color:var(--line)">&mdash;</span> Simon Willison
       </li>
       <li>
         <span class="tag">Infrastructure</span> &middot;
@@ -307,54 +368,34 @@ footer{
         <span style="color:var(--line)">&mdash;</span> NVIDIA
       </li>
       <li>
-        <span class="tag">Infrastructure</span> &middot;
-        <a href="https://tomtunguz.com/what-if-they-are-all-clouds/" target="_blank" rel="noopener noreferrer">What if They&#39;re All Clouds?</a>
-        <span style="color:var(--line)">&mdash;</span> Tomasz Tunguz
+        <span class="tag">Africa</span> &middot;
+        <a href="https://techcentral.co.za/disney-vault-netflix-south-africa/287499/" target="_blank" rel="noopener noreferrer">Disney opens its vault to Netflix in South Africa</a>
+        <span style="color:var(--line)">&mdash;</span> TechCentral
       </li>
       <li>
         <span class="tag">Africa</span> &middot;
-        <a href="https://disruptafrica.com/2026/10/20/how-a-blockchain-marketplace-is-unlocking-clean-gas-production-in-kenya/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=how-a-blockchain-marketplace-is-unlocking-clean-gas-production-in-kenya" target="_blank" rel="noopener noreferrer">How a blockchain marketplace is unlocking clean gas production in Kenya</a>
+        <a href="https://technext24.com/opinion/africas-tech-problem-charles-olanrewaju/" target="_blank" rel="noopener noreferrer">Africa’s tech industry doesn’t have an innovation problem. It has an execution challenge- by Charles Olanrewaju</a>
+        <span style="color:var(--line)">&mdash;</span> Technext
+      </li>
+      <li>
+        <span class="tag">Africa</span> &middot;
+        <a href="https://disruptafrica.com/2026/10/21/her-startup-opens-applications-for-2nd-cohort-of-african-women-led-tech-startups/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=her-startup-opens-applications-for-2nd-cohort-of-african-women-led-tech-startups" target="_blank" rel="noopener noreferrer">Her Startup opens applications for 2nd cohort of African women-led tech startups</a>
         <span style="color:var(--line)">&mdash;</span> Disrupt Africa
       </li>
       <li>
         <span class="tag">Africa</span> &middot;
-        <a href="https://techcabal.com/2026/10/20/spectrum-costs-african-telecom-investment/" target="_blank" rel="noopener noreferrer">High spectrum costs squeeze African telecom investment and digital growth</a>
-        <span style="color:var(--line)">&mdash;</span> TechCabal
-      </li>
-      <li>
-        <span class="tag">Africa</span> &middot;
-        <a href="https://www.itweb.co.za/article/nil-africa-becomes-trainocate-africa-a-new-chapter-in-closing-africas-digital-skills-gap/kYbe97XbjAyqAWpG" target="_blank" rel="noopener noreferrer">NIL Africa becomes Trainocate Africa: A new chapter in closing Africa’s digital skills gap</a>
+        <a href="https://www.itweb.co.za/article/can-smes-afford-ai/wbrpO7g2eK8vDLZn" target="_blank" rel="noopener noreferrer">Can SMEs afford AI?</a>
         <span style="color:var(--line)">&mdash;</span> ITWeb
       </li>
       <li>
-        <span class="tag">Africa</span> &middot;
-        <a href="https://techcentral.co.za/software-defined-vehicles-south-african-driveways/287402/" target="_blank" rel="noopener noreferrer">A software revolution is heading for South African driveways</a>
-        <span style="color:var(--line)">&mdash;</span> TechCentral
-      </li>
-      <li>
         <span class="tag">Security</span> &middot;
-        <a href="https://thehackernews.com/2026/10/clickfix-attackers-exploit-siemens.html" target="_blank" rel="noopener noreferrer">ClickFix Attackers Exploit Siemens Software Center Flaw to Deploy Remote Access Trojan</a>
-        <span style="color:var(--line)">&mdash;</span> The Hacker News
-      </li>
-      <li>
-        <span class="tag">Security</span> &middot;
-        <a href="https://www.bleepingcomputer.com/news/security/nikkei-discloses-third-data-breach-in-a-month-18m-records-exposed/" target="_blank" rel="noopener noreferrer">Nikkei discloses third data breach in a month, 1.8M records exposed</a>
+        <a href="https://www.bleepingcomputer.com/news/security/cisa-and-fbi-safepay-ransomware-has-hit-over-600-critical-infrastructure-organizations/" target="_blank" rel="noopener noreferrer">CISA: SafePay ransomware hit over 600 critical infrastructure orgs</a>
         <span style="color:var(--line)">&mdash;</span> BleepingComputer
       </li>
       <li>
-        <span class="tag">Security</span> &middot;
-        <a href="https://blog.cloudflare.com/protect-your-netscaler-gateway/" target="_blank" rel="noopener noreferrer">Beyond the patch: Protecting your NetScaler gateway against future vulnerabilities</a>
-        <span style="color:var(--line)">&mdash;</span> Cloudflare
-      </li>
-      <li>
         <span class="tag">Business</span> &middot;
-        <a href="https://sifted.eu/articles/thore-graepel-metis-reasoning/" target="_blank" rel="noopener noreferrer">Ex-DeepMind researcher Thore Graepel launches new startup Metis Reasoning</a>
-        <span style="color:var(--line)">&mdash;</span> Sifted
-      </li>
-      <li>
-        <span class="tag">Business</span> &middot;
-        <a href="https://ventureburn.com/dream-labs-raises-90m-ai-everyday-robots/" target="_blank" rel="noopener noreferrer">Dream Labs Raises $90M to Build AI for Everyday Robots</a>
-        <span style="color:var(--line)">&mdash;</span> Ventureburn
+        <a href="https://disruptafrica.com/2026/10/21/3-nigerian-startups-selected-for-marls-global-accelerator/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=3-nigerian-startups-selected-for-marls-global-accelerator" target="_blank" rel="noopener noreferrer">3 Nigerian startups selected for MARL’s global accelerator</a>
+        <span style="color:var(--line)">&mdash;</span> Disrupt Africa
       </li>
     </ul>
   </details>
