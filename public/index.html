@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>AI Brief &middot; 01 Nov</title>
+<title>AI Brief &middot; 02 Nov</title>
 <style>
 /* Dark by default and not switchable. This is read at six in the morning by
    one person, and a theme toggle is a setting to maintain for no one. */
@@ -114,7 +114,7 @@ footer{
 
   <header>
     <h1>The Daily AI Brief<span class="dot">.</span></h1>
-    <div class="meta">Sunday 01 November 2026, 13:16 &middot; 5 stories</div>
+    <div class="meta">Monday 02 November 2026, 14:21 &middot; 5 stories</div>
     <div class="creed">
       Read the green line first &mdash; that is the part you could say out loud.
       <b>Then go and test one of them.</b> Reading about an agent is not the same
@@ -125,38 +125,67 @@ footer{
   <section class="lane">
     <div class="lane-head">
       <span class="lane-name">Agents &amp; Coding</span>
-      <span class="lane-count">2</span>
+      <span class="lane-count">1</span>
     </div>
     <p class="lane-q">What can an agent now DO without a human?</p>
     <hr>
     <article>
-      <p class="why">A coding agent can now run a local server and render real-time interface changes directly to a browser while editing files.</p>
-      <p class="head">
-        <a href="https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener noreferrer">Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime</a>
-      </p>
-      <p class="sum">Cloud runtime endpoints now expose authenticated ports to forward web traffic directly into an active sandbox session. This setup lets an autonomous developer modify code and serve live frontend updates simultaneously without human deployment steps.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">Yesterday</span>
-        <span class="badge">From the source</span>
-      </div>
-    </article>
-    <article>
-      <p class="why">An agent running untrusted generated HTML can manipulate parent application windows via misconfigured postMessage handlers to compromise user accounts.</p>
+      <p class="why">An agent executing untrusted preview code can breach host browser boundaries through exposed subcomponent libraries, taking control without user consent.</p>
       <p class="head">
         <a href="https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/" target="_blank" rel="noopener noreferrer">How We Took Over ChatGPT Accounts</a>
       </p>
-      <p class="sum">Security researchers identified an exploit path in an interactive web preview container by abusing message-passing interfaces. The vulnerability routed actions through a mathematical keyboard library to escape the isolated frame and target parent session accounts.</p>
+      <p class="sum">Security researchers identified a sandbox breakout vulnerability in ChatGPT that allowed embedded interactive previews to communicate with the parent web session. By triggering an integrated math keyboard component via inter-frame messages, attackers could hijack accounts and extract user data.</p>
       <div class="foot">
         <span class="src">
           <a href="https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/" target="_blank" rel="noopener noreferrer">Simon Willison</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">12h ago</span>
+        <span class="src">Yesterday</span>
         <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+  </section>
+  <section class="lane">
+    <div class="lane-head">
+      <span class="lane-name">Frontier Models</span>
+      <span class="lane-count">1</span>
+    </div>
+    <p class="lane-q">What capability just became possible?</p>
+    <hr>
+    <article>
+      <p class="why">Frontier language models can now autonomously analyze and prioritize mountains of stolen unstructured text to identify high-value extortion targets without human triage.</p>
+      <p class="head">
+        <a href="https://thehackernews.com/2026/11/new-volta-infostealer-uses-claude.html" target="_blank" rel="noopener noreferrer">New VOLTA Infostealer Uses Claude, Gemini, and Kimi AI to Rank Victims by Financial Value</a>
+      </p>
+      <p class="sum">Security analysts detected Windows malware integrating commercial large language models to evaluate exfiltrated credentials and confidential workspace files. The software uses these models to automatically assess which stolen records offer the highest monetary value.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://thehackernews.com/2026/11/new-volta-infostealer-uses-claude.html" target="_blank" rel="noopener noreferrer">The Hacker News</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">7h ago</span>
+      </div>
+    </article>
+  </section>
+  <section class="lane">
+    <div class="lane-head">
+      <span class="lane-name">Infrastructure</span>
+      <span class="lane-count">1</span>
+    </div>
+    <p class="lane-q">Compute, power, data centres - what did they cost?</p>
+    <hr>
+    <article>
+      <p class="why">Hosting modern compute facilities requires single regional power utilities to contract gigawatt-scale supplies, highlighting the immense physical energy cost behind scalable infrastructure.</p>
+      <p class="head">
+        <a href="https://www.datacenterdynamics.com/en/news/wisconsin-utility-alliant-energy-expects-to-sign-1gw-of-data-center-supply-contracts-in-next-six-months/" target="_blank" rel="noopener noreferrer">Wisconsin utility Alliant Energy expects to sign 1GW of data center supply contracts in next six months</a>
+      </p>
+      <p class="sum">An energy utility in Wisconsin expects to secure supply agreements delivering 1GW of electricity to server facilities over the next six months. These incoming agreements will build upon an existing pipeline of 3.4GW in contracted computational power demand.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://www.datacenterdynamics.com/en/news/wisconsin-utility-alliant-energy-expects-to-sign-1gw-of-data-center-supply-contracts-in-next-six-months/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">Just now</span>
       </div>
     </article>
   </section>
@@ -168,54 +197,40 @@ footer{
     <p class="lane-q">What new attack or failure mode appears?</p>
     <hr>
     <article>
-      <p class="why">Compromising a hosting platform&#39;s environment variables allows attackers to immediately drain developers&#39; external AI provider budgets through stolen model credentials.</p>
+      <p class="why">Automated security scanning is discovering legacy vulnerabilities at unprecedented speeds, making rapid patch management vital before attackers exploit the newly revealed attack surface.</p>
       <p class="head">
-        <a href="https://www.bleepingcomputer.com/news/security/northflank-security-breach-leads-to-abuse-of-customers-ai-api-keys/" target="_blank" rel="noopener noreferrer">Northflank security breach leads to abuse of customers&#39; AI API keys</a>
+        <a href="https://www.schneier.com/blog/archives/2026/11/ai-vulnerability-finding-2.html" target="_blank" rel="noopener noreferrer">AI Vulnerability Finding</a>
       </p>
-      <p class="sum">A cloud deployment provider suffered an intrusion that exposed confidential application variables across customer environments. Malicious actors subsequently leveraged the compromised access secrets to make unauthorized calls against third-party AI interfaces.</p>
+      <p class="sum">Automated vulnerability detection systems uncovered 3% of all historically recorded critical software bugs during a single month. Maintaining this pace would expose another ~100,000 vulnerabilities this year, boosting the cumulative historical count by ~26%.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://www.bleepingcomputer.com/news/security/northflank-security-breach-leads-to-abuse-of-customers-ai-api-keys/" target="_blank" rel="noopener noreferrer">BleepingComputer</a>
+          <a href="https://www.schneier.com/blog/archives/2026/11/ai-vulnerability-finding-2.html" target="_blank" rel="noopener noreferrer">Schneier</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">17h ago</span>
+        <span class="src">Just now</span>
+        <span class="badge analysis">Explains the mechanism</span>
       </div>
     </article>
   </section>
   <section class="lane">
     <div class="lane-head">
       <span class="lane-name">Business</span>
-      <span class="lane-count">2</span>
+      <span class="lane-count">1</span>
     </div>
     <p class="lane-q">Where is the money actually moving?</p>
     <hr>
     <article>
-      <p class="why">Capital is retreating from search giants as generative answer interfaces destroy the lucrative advertising economics of traditional web links.</p>
+      <p class="why">Enterprises can bypass expensive frontier proprietary APIs by deploying modified open-weight Chinese models that third parties sanitize for corporate governance.</p>
       <p class="head">
-        <a href="https://latent.space/p/ainews-google-admits-ai-mode-hurts-search-revenue-15-500b-drop-worst-since-2004-ipo-ai-bear-market-c/" target="_blank" rel="noopener noreferrer">[AINews] Google admits AI Mode hurts Search revenue; -15% $500B drop worst since 2004 IPO. AI Bear Market coming?</a>
+        <a href="https://restofworld.org/2026/western-startups-realigning-chinese-ai-models/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener noreferrer">Startups recalibrate Chinese AI for the West</a>
       </p>
-      <p class="sum">Alphabet disclosed that its automated query interface is actively cannibalizing core advertising returns, triggering a 15% valuation loss totaling $500 billion. The decline represents the company&#39;s steepest financial contraction since its public market debut in 2004.</p>
+      <p class="sum">Specialized service firms are modifying high-performing Chinese open-weight models to satisfy security and compliance standards for Western enterprises. These startups strip out ideological filtering and adjust underlying model behaviors to make foreign open weights commercially viable abroad.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://latent.space/p/ainews-google-admits-ai-mode-hurts-search-revenue-15-500b-drop-worst-since-2004-ipo-ai-bear-market-c/" target="_blank" rel="noopener noreferrer">Latent Space</a>
+          <a href="https://restofworld.org/2026/western-startups-realigning-chinese-ai-models/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds" target="_blank" rel="noopener noreferrer">Rest of World</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">Yesterday</span>
-        <span class="badge analysis">Explains the mechanism</span>
-      </div>
-    </article>
-    <article>
-      <p class="why">Money is concentrating heavily into synthetic video infrastructure, with $2.98 billion pouring into specialized media generation platforms.</p>
-      <p class="head">
-        <a href="https://ventureburn.com/kling-ai-raises-2-98-billion-in-historic-funding-round/" target="_blank" rel="noopener noreferrer">Kling AI Raises $2.98 Billion To Rewrite the Video AI Rulebook</a>
-      </p>
-      <p class="sum">A synthetic video platform secured $2.98 billion in fresh institutional investment to expand its media generation capabilities. The substantial capital commitment reflects massive ongoing expenditure in automated video synthesis architectures.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://ventureburn.com/kling-ai-raises-2-98-billion-in-historic-funding-round/" target="_blank" rel="noopener noreferrer">Ventureburn</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">Yesterday</span>
+        <span class="src">1h ago</span>
       </div>
     </article>
   </section>
@@ -237,23 +252,28 @@ footer{
       </li>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far/" target="_blank" rel="noopener noreferrer">Basically no one is using AI agents for their DoorDash orders</a>
-        <span style="color:var(--line)">&mdash;</span> Ars Technica
+        <a href="https://www.technologyreview.com/2026/11/02/1147846/the-agentic-web-is-here/" target="_blank" rel="noopener noreferrer">The agentic web is here</a>
+        <span style="color:var(--line)">&mdash;</span> MIT Tech Review
       </li>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://blogs.nvidia.com/blog/ai-joins-the-search-for-extraterrestrial-signals/" target="_blank" rel="noopener noreferrer">Things That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals</a>
-        <span style="color:var(--line)">&mdash;</span> NVIDIA
+        <a href="https://stratechery.com/2026/google-earnings-facebook-deja-vu-the-agent-play/" target="_blank" rel="noopener noreferrer">Google Earnings, Facebook Déjà Vu, The Agent Play</a>
+        <span style="color:var(--line)">&mdash;</span> Stratechery
       </li>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://techcrunch.com/2026/10/30/doordash-said-its-only-received-several-hundred-orders-from-ai-agents/" target="_blank" rel="noopener noreferrer">DoorDash said it’s only received ‘several hundred’ orders from AI agents</a>
-        <span style="color:var(--line)">&mdash;</span> TechCrunch
-      </li>
-      <li>
-        <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://techcentral.co.za/jse-ai-agents-governance-alicia-greenwood/287872/" target="_blank" rel="noopener noreferrer">Why the JSE is keeping its AI agents on a short leash</a>
+        <a href="https://techcentral.co.za/binance-hack-automated-laundering-chainalysis/287932/" target="_blank" rel="noopener noreferrer">Binance hackers using automated laundering ‘never seen before’</a>
         <span style="color:var(--line)">&mdash;</span> TechCentral
+      </li>
+      <li>
+        <span class="tag">Agents &amp; Coding</span> &middot;
+        <a href="https://www.itweb.co.za/article/ai-agents-the-hidden-cost-of-letting-go-of-control/lwrKxv3Y8RyMmg1o" target="_blank" rel="noopener noreferrer">AI agents: The hidden cost of letting go of control</a>
+        <span style="color:var(--line)">&mdash;</span> ITWeb
+      </li>
+      <li>
+        <span class="tag">Agents &amp; Coding</span> &middot;
+        <a href="https://technext24.com/women-in-tech/tech-trivia-with-olajumoke-software-developer/" target="_blank" rel="noopener noreferrer">Tech Trivia with Ipoola Olajumoke, Software Developer at FCMB</a>
+        <span style="color:var(--line)">&mdash;</span> Technext
       </li>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
@@ -266,49 +286,54 @@ footer{
         <span style="color:var(--line)">&mdash;</span> Simon Willison
       </li>
       <li>
-        <span class="tag">Frontier Models</span> &middot;
-        <a href="https://www.schneier.com/blog/archives/2026/10/bloatware-in-aftermarket-auto-parts.html" target="_blank" rel="noopener noreferrer">Bloatware in Aftermarket Auto Parts</a>
-        <span style="color:var(--line)">&mdash;</span> Schneier
+        <span class="tag">Infrastructure</span> &middot;
+        <a href="https://www.itweb.co.za/article/uptime-institute-signs-memorandum-of-understanding-mou-with-indonesian-data-center-providers-association-idpro-to-advance-indonesias-data-center-industry/KPNG878NYerq4mwD" target="_blank" rel="noopener noreferrer">Uptime Institute Signs Memorandum of Understanding (MOU) with Indonesian Data Center Providers Association (IDPRO) to Advance Indonesia&#39;s Data Center Industry</a>
+        <span style="color:var(--line)">&mdash;</span> ITWeb
       </li>
       <li>
         <span class="tag">Infrastructure</span> &middot;
-        <a href="https://arstechnica.com/gadgets/2026/10/united-airlines-ceo-doubts-supersonic-airliner-from-boom-will-be-ready-by-2029/" target="_blank" rel="noopener noreferrer">Supersonic airliner in doubt as company shifts to powering AI data centers</a>
-        <span style="color:var(--line)">&mdash;</span> Ars Technica
+        <a href="https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/" target="_blank" rel="noopener noreferrer">OpenAI might rebrand its data centers as ‘AI compute campuses’</a>
+        <span style="color:var(--line)">&mdash;</span> TechCrunch
       </li>
       <li>
-        <span class="tag">Infrastructure</span> &middot;
-        <a href="https://www.datacenterdynamics.com/en/news/spinncloud-rebrands-to-sparxity-announces-cluster-deployment-at-j%C3%BClich-center-in-germany/" target="_blank" rel="noopener noreferrer">SpiNNcloud rebrands to Sparxity, announces cluster deployment at Jülich center in Germany</a>
-        <span style="color:var(--line)">&mdash;</span> Data Center Dynamics
+        <span class="tag">Africa</span> &middot;
+        <a href="https://techcentral.co.za/new-network-operators-south-africa-icasa/287940/" target="_blank" rel="noopener noreferrer">The door to new network operators in South Africa is about to open</a>
+        <span style="color:var(--line)">&mdash;</span> TechCentral
       </li>
       <li>
-        <span class="tag">Infrastructure</span> &middot;
-        <a href="https://pivotlake.io/blog/its-the-memory-latency-stupid/" target="_blank" rel="noopener noreferrer">It&#39;s the memory latency, stupid</a>
-        <span style="color:var(--line)">&mdash;</span> Hacker News
-      </li>
-      <li>
-        <span class="tag">Infrastructure</span> &middot;
-        <a href="https://techcabal.com/2026/10/31/vectar-energy-day-1-1000/" target="_blank" rel="noopener noreferrer">How Vectar Energy moved from selling solar generators to building carbon-market infrastructure</a>
+        <span class="tag">Africa</span> &middot;
+        <a href="https://techcabal.com/2026/11/02/enza-capital-ai/" target="_blank" rel="noopener noreferrer">Enza Capital wants Africa to build its AI with its new fund</a>
         <span style="color:var(--line)">&mdash;</span> TechCabal
       </li>
       <li>
         <span class="tag">Africa</span> &middot;
-        <a href="https://techcabal.com/2026/10/31/grey-ditch-the-dollar/" target="_blank" rel="noopener noreferrer">Intra-African payment rails are key to cutting cross-border friction, says Grey</a>
-        <span style="color:var(--line)">&mdash;</span> TechCabal
-      </li>
-      <li>
-        <span class="tag">Africa</span> &middot;
-        <a href="https://technext24.com/news/mtn-nigeria-fintech-revenue-drops-despite-momo/" target="_blank" rel="noopener noreferrer">MTN Nigeria’s fintech revenue drops 25.9% despite MoMo’s 102% growth</a>
+        <a href="https://technext24.com/news/heirs-technologies-2026-cybersecurity-report/" target="_blank" rel="noopener noreferrer">Heirs Technologies releases 2026 cybersecurity report, highlighting growing threats to Africa’s digital economy</a>
         <span style="color:var(--line)">&mdash;</span> Technext
       </li>
       <li>
-        <span class="tag">Security</span> &middot;
-        <a href="https://thehackernews.com/2026/11/critical-lxd-and-microcloud-flaw-cvss.html" target="_blank" rel="noopener noreferrer">CVSS 10.0 LXD, MicroCloud Flaw Lets Attackers Impersonate Trusted Clients Without a Private Key</a>
-        <span style="color:var(--line)">&mdash;</span> The Hacker News
+        <span class="tag">Africa</span> &middot;
+        <a href="https://disruptafrica.com/2026/11/02/niger-based-likita-care-wins-2026-africa-prize-for-engineering-innovation/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=niger-based-likita-care-wins-2026-africa-prize-for-engineering-innovation" target="_blank" rel="noopener noreferrer">Niger-based Likita Care wins 2026 Africa Prize for Engineering Innovation</a>
+        <span style="color:var(--line)">&mdash;</span> Disrupt Africa
       </li>
       <li>
         <span class="tag">Security</span> &middot;
-        <a href="https://blog.cloudflare.com/emudhra-patching/" target="_blank" rel="noopener noreferrer">4 real? Tracking exploitation and patching of eMudhra’s weak keys</a>
-        <span style="color:var(--line)">&mdash;</span> Cloudflare
+        <a href="https://www.bleepingcomputer.com/news/security/synology-warns-customers-of-ongoing-c3rb3r-ransomware-attacks/" target="_blank" rel="noopener noreferrer">Synology warns of C3RB3R ransomware attacks targeting NAS devices</a>
+        <span style="color:var(--line)">&mdash;</span> BleepingComputer
+      </li>
+      <li>
+        <span class="tag">Security</span> &middot;
+        <a href="https://news.ycombinator.com/item?id=50328896" target="_blank" rel="noopener noreferrer">Ask HN: Which TV do you recommend for privacy?</a>
+        <span style="color:var(--line)">&mdash;</span> Hacker News
+      </li>
+      <li>
+        <span class="tag">Business</span> &middot;
+        <a href="https://sifted.eu/articles/creandum-750-largest-vc-fund-back-ai-san-francisco/" target="_blank" rel="noopener noreferrer">Lovable backer Creandum raises $750m for largest-ever fund to back AI boom</a>
+        <span style="color:var(--line)">&mdash;</span> Sifted
+      </li>
+      <li>
+        <span class="tag">Agents &amp; Coding</span> &middot;
+        <a href="https://techcabal.com/2026/10/31/verve-ai-payment/" target="_blank" rel="noopener noreferrer">Verve plans phone tap-to-pay and AI agent payments, CEO says</a>
+        <span style="color:var(--line)">&mdash;</span> TechCabal
       </li>
       <li>
         <span class="tag">Business</span> &middot;
@@ -316,24 +341,14 @@ footer{
         <span style="color:var(--line)">&mdash;</span> TechCrunch
       </li>
       <li>
-        <span class="tag">Infrastructure</span> &middot;
-        <a href="https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers" target="_blank" rel="noopener noreferrer">Sam Altman says it’s better for RAM to be in a data center than on your desk</a>
-        <span style="color:var(--line)">&mdash;</span> The Verge
+        <span class="tag">Africa</span> &middot;
+        <a href="https://www.itweb.co.za/article/cape-towns-e-bus-fleet-takes-shape/G98YdMLGA2E7X2PD" target="_blank" rel="noopener noreferrer">Cape Town’s e-bus fleet takes shape</a>
+        <span style="color:var(--line)">&mdash;</span> ITWeb
       </li>
       <li>
         <span class="tag">Security</span> &middot;
-        <a href="https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf" target="_blank" rel="noopener noreferrer">TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8</a>
-        <span style="color:var(--line)">&mdash;</span> Hacker News
-      </li>
-      <li>
-        <span class="tag">Infrastructure</span> &middot;
-        <a href="https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us/" target="_blank" rel="noopener noreferrer">Configure the ChatGPT desktop app with Amazon Bedrock in AWS GovCloud (US)</a>
-        <span style="color:var(--line)">&mdash;</span> AWS Machine Learning
-      </li>
-      <li>
-        <span class="tag">Security</span> &middot;
-        <a href="https://www.interconnects.ai/p/was-i-wrong-about-open-models-and" target="_blank" rel="noopener noreferrer">Was I wrong about open models &amp; cyber risks?</a>
-        <span style="color:var(--line)">&mdash;</span> Interconnects
+        <a href="https://thehackernews.com/2026/11/attackers-pose-as-it-support-on.html" target="_blank" rel="noopener noreferrer">Attackers Pose as IT Support on Microsoft Teams, Abuse AD CS to Steal Company Data</a>
+        <span style="color:var(--line)">&mdash;</span> The Hacker News
       </li>
     </ul>
   </details>
