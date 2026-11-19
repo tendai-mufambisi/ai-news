@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>AI Brief &middot; 18 Nov</title>
+<title>AI Brief &middot; 19 Nov</title>
 <style>
 /* Dark by default and not switchable. This is read at six in the morning by
    one person, and a theme toggle is a setting to maintain for no one. */
@@ -114,7 +114,7 @@ footer{
 
   <header>
     <h1>The Daily AI Brief<span class="dot">.</span></h1>
-    <div class="meta">Wednesday 18 November 2026, 14:58 &middot; 11 stories</div>
+    <div class="meta">Thursday 19 November 2026, 14:58 &middot; 11 stories</div>
     <div class="creed">
       Read the green line first &mdash; that is the part you could say out loud.
       <b>Then go and test one of them.</b> Reading about an agent is not the same
@@ -125,154 +125,188 @@ footer{
   <section class="lane">
     <div class="lane-head">
       <span class="lane-name">Agents &amp; Coding</span>
-      <span class="lane-count">4</span>
+      <span class="lane-count">3</span>
     </div>
     <p class="lane-q">What can an agent now DO without a human?</p>
     <hr>
     <article>
-      <p class="why">An agent can safely execute untrusted software locally because its runtime environment is isolated from host system resources.</p>
+      <p class="why">Automated review tools can evaluate and merge 5,000 pull requests every month, allowing organizations spending $250,000 monthly on compute to remove developers from line-by-line inspection.</p>
+      <p class="head">
+        <a href="https://newsletter.pragmaticengineer.com/p/software-factories-and-code-reviews" target="_blank" rel="noopener noreferrer">Software factories and code reviews with Harjot Gill</a>
+      </p>
+      <p class="sum">A startup founder detailed processing more than 5,000 code review requests during a single month while maintaining an artificial intelligence budget of $250,000. He argued that these automated workflows have rendered traditional manual code examination obsolete.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://newsletter.pragmaticengineer.com/p/software-factories-and-code-reviews" target="_blank" rel="noopener noreferrer">Pragmatic Engineer</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">19h ago</span>
+        <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">Software agents can run generated commands inside an isolated environment without risking data loss or prompt injection attacks on the underlying machine.</p>
       <p class="head">
         <a href="https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/" target="_blank" rel="noopener noreferrer">External sandboxes for coding agents</a>
       </p>
-      <p class="sum">A new architecture isolates code execution environments from the external assistants that create the instructions. This boundary prevents prompt injection attempts or erroneous commands from harming the developer machine.</p>
+      <p class="sum">Researchers created an isolation design pattern alongside three open server implementations to decouple agent reasoning from script execution environments. The architecture runs untrusted generated instructions inside a distinct container while keeping the controlling model outside to prevent hostile injections from harming the primary computer.</p>
       <div class="foot">
         <span class="src">
           <a href="https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/" target="_blank" rel="noopener noreferrer">Simon Willison</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">14h ago</span>
+        <span class="src">Yesterday</span>
         <span class="badge analysis">Explains the mechanism</span>
       </div>
     </article>
     <article>
-      <p class="why">Agents can independently generate large volumes of functional code, but human developers must now spend their time vetting correctness.</p>
+      <p class="why">The system autonomously drafts experimental ideas, runs machine learning trials, and rolls out proven architecture optimizations across production ranking setups without engineer intervention.</p>
       <p class="head">
-        <a href="https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/" target="_blank" rel="noopener noreferrer">Harvard researchers find AI coding agents shifted the bottleneck to code review</a>
+        <a href="https://engineering.fb.com/2026/11/18/ml-applications/ai-agents-to-scale-ml-innovations-across-ads-ranking-models/" target="_blank" rel="noopener noreferrer">How Meta Uses AI Agents to Scale ML Innovations Across Ads Ranking Models</a>
       </p>
-      <p class="sum">Academic research indicates that automated programming systems transfer engineering friction from generating software to inspecting it. As syntax production becomes instantaneous, human code verification emerges as the primary development hurdle.</p>
+      <p class="sum">Meta detailed an automated system that conceives technical hypotheses, builds machine learning tests, and verifies algorithmic changes for advertising ranking software. The architecture then distributes validated training refinements and structural enhancements across its wide collection of production advertising models.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/" target="_blank" rel="noopener noreferrer">Hacker News</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">16h ago</span>
-      </div>
-    </article>
-    <article>
-      <p class="why">An agent can audit incoming emails to detect subscription billing and manage schedule adjustments without user involvement.</p>
-      <p class="head">
-        <a href="https://www.theverge.com/tech/1035756/google-spark-ai-tasks-free" target="_blank" rel="noopener noreferrer">Google’s Spark AI agent becomes ‘Tasks’ — and now it’s free</a>
-      </p>
-      <p class="sum">A free personal assistant in the United States runs on an updated model to manage calendars and meal plans. The system also inspects email archives to detect unused recurring billing subscriptions.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://www.theverge.com/tech/1035756/google-spark-ai-tasks-free" target="_blank" rel="noopener noreferrer">The Verge</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">18h ago</span>
-      </div>
-    </article>
-    <article>
-      <p class="why">The agent can independently track product discounts and execute checkout payments without human intervention.</p>
-      <p class="head">
-        <a href="https://techcrunch.com/2026/11/17/daydreams-new-ai-agent-acts-as-your-personal-stylist-and-can-shop-for-you-too/" target="_blank" rel="noopener noreferrer">Daydream’s new AI agent acts as your personal stylist — and can shop for you, too</a>
-      </p>
-      <p class="sum">A personal shopping assistant tracks price drops, creates wardrobe plans, and executes consumer transactions autonomously. The service also matches prospective apparel against existing clothing items and tests fits virtually.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://techcrunch.com/2026/11/17/daydreams-new-ai-agent-acts-as-your-personal-stylist-and-can-shop-for-you-too/" target="_blank" rel="noopener noreferrer">TechCrunch</a>
+          <a href="https://engineering.fb.com/2026/11/18/ml-applications/ai-agents-to-scale-ml-innovations-across-ads-ranking-models/" target="_blank" rel="noopener noreferrer">Meta Engineering</a>
         </span>
         <span class="sep">&middot;</span>
         <span class="src">20h ago</span>
+        <span class="badge">From the source</span>
       </div>
     </article>
   </section>
   <section class="lane">
     <div class="lane-head">
       <span class="lane-name">Frontier Models</span>
-      <span class="lane-count">3</span>
+      <span class="lane-count">2</span>
     </div>
     <p class="lane-q">What capability just became possible?</p>
     <hr>
     <article>
-      <p class="why">Leading benchmark performance is now accessible at a fraction of previous operational costs.</p>
+      <p class="why">The change introduces an intermediate performance tier priced at $3/million tokens, altering inference budgets rather than unlocking a distinct technical capability.</p>
       <p class="head">
-        <a href="https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/" target="_blank" rel="noopener noreferrer">[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%-600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse</a>
+        <a href="https://simonwillison.net/2026/Nov/18/llm-gemini/" target="_blank" rel="noopener noreferrer">llm-gemini 0.38</a>
       </p>
-      <p class="sum">New frontier systems entered the market offering cost reductions between 20% and 600% across core evaluations. While the flagship version received mixed initial impressions, a lighter variant is positioned for standard production tasks.</p>
+      <p class="sum">Google unveiled Gemini 4 Neon alongside an altered tier structure that reorganizes options between Carbon and Hydrogen tiers. The new mid-tier model is priced at $3/million tokens while introductory discounts on sibling models prepare to expire on 1st December.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/" target="_blank" rel="noopener noreferrer">Latent Space</a>
+          <a href="https://simonwillison.net/2026/Nov/18/llm-gemini/" target="_blank" rel="noopener noreferrer">Simon Willison</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">3h ago</span>
+        <span class="src">13h ago</span>
         <span class="badge analysis">Explains the mechanism</span>
       </div>
     </article>
     <article>
-      <p class="why">Cached prompt pricing dropping to $0.40 per million tokens makes continuous multi-step agent interactions financially viable for low-margin products.</p>
+      <p class="why">Engineers can now execute full parameter fine-tuning on on-demand serverless infrastructure to exceed parameter-efficient LoRA adaptations without managing dedicated GPU clusters.</p>
       <p class="head">
-        <a href="https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/" target="_blank" rel="noopener noreferrer">GPT‑6.2 Astra and GPT‑6.2 Sol</a>
+        <a href="https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization/" target="_blank" rel="noopener noreferrer">Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization</a>
       </p>
-      <p class="sum">OpenAI published production models priced at $8 per million input tokens and $40 per million output tokens. Context caching expenses fell sharply to $0.40 per million tokens, heavily discounting iterative multi-step runs.</p>
+      <p class="sum">Amazon SageMaker expanded its on-demand customization infrastructure to support complete parameter tuning alongside low-rank adaptation. The guide outlines how full adaptation alters the mathematical properties of weight matrices to exceed lightweight adapter accuracy on standardized tests.</p>
       <div class="foot">
         <span class="src">
-          <a href="https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/" target="_blank" rel="noopener noreferrer">Simon Willison</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">14h ago</span>
-        <span class="badge analysis">Explains the mechanism</span>
-      </div>
-    </article>
-    <article>
-      <p class="why">Models can now independently authenticate into web portals and conclude financial purchases on behalf of users.</p>
-      <p class="head">
-        <a href="https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/" target="_blank" rel="noopener noreferrer">Google expands access to Gemini Tasks, which can help with calls, purchases</a>
-      </p>
-      <p class="sum">An automated operating mode coordinates phone calls and signs into external online services for users. The tool can also conduct commercial checkout workflows independently.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/" target="_blank" rel="noopener noreferrer">TechCrunch</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">18h ago</span>
-      </div>
-    </article>
-  </section>
-  <section class="lane">
-    <div class="lane-head">
-      <span class="lane-name">Infrastructure</span>
-      <span class="lane-count">2</span>
-    </div>
-    <p class="lane-q">Compute, power, data centres - what did they cost?</p>
-    <hr>
-    <article>
-      <p class="why">It handles multi-node orchestration and cache routing out of the box, reducing the engineering overhead of hosting distributed open-source models.</p>
-      <p class="head">
-        <a href="https://aws.amazon.com/blogs/machine-learning/managed-nvidia-dynamo-on-amazon-sagemaker-hyperpod-inference/" target="_blank" rel="noopener noreferrer">Managed NVIDIA Dynamo on Amazon SageMaker HyperPod Inference</a>
-      </p>
-      <p class="sum">Managed inference infrastructure now supports distributed model serving with cache-aware routing and automatic fault handling. Teams can run massive models across distributed hardware clusters without constructing an orchestration layer.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://aws.amazon.com/blogs/machine-learning/managed-nvidia-dynamo-on-amazon-sagemaker-hyperpod-inference/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
+          <a href="https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization/" target="_blank" rel="noopener noreferrer">AWS Machine Learning</a>
         </span>
         <span class="sep">&middot;</span>
         <span class="src">13h ago</span>
         <span class="badge">From the source</span>
       </div>
     </article>
+  </section>
+  <section class="lane">
+    <div class="lane-head">
+      <span class="lane-name">Infrastructure</span>
+      <span class="lane-count">3</span>
+    </div>
+    <p class="lane-q">Compute, power, data centres - what did they cost?</p>
+    <hr>
     <article>
-      <p class="why">It outlines the precise operational boundaries where self-hosting on dedicated GPUs becomes cheaper than calling proprietary commercial APIs.</p>
+      <p class="why">Hardware vendors packed up to 128GB of unified memory into desktop PCs to run large local models and fine-tuning workloads without recurring cloud compute bills.</p>
+      <p class="head">
+        <a href="https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now/" target="_blank" rel="noopener noreferrer">NVIDIA RTX Spark Compact Desktops Out Now</a>
+      </p>
+      <p class="sum">Hardware manufacturers launched compact personal workstations equipped with up to 128GB of unified system memory. These dedicated desktop computers are designed to execute local model adaptation, media generation, and autonomous agents directly on client hardware.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now/" target="_blank" rel="noopener noreferrer">NVIDIA</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">23h ago</span>
+        <span class="badge">From the source</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">Data center compute remains dominated by a $107.6b quarterly market where smaller hosters accounted for $47.5b but saw their share dip to 44.1% under tighter financing terms.</p>
+      <p class="head">
+        <a href="https://tomtunguz.com/the-non-hyperscaler-half-of-nvidia/" target="_blank" rel="noopener noreferrer">Squeezing Neoclouds Pushes NVIDIA Back Toward Its Rivals</a>
+      </p>
+      <p class="sum">Nvidia generated $107.6b in quarterly data center revenue, with major cloud providers accounting for $60.1b while specialized hosting providers and labs represented $47.5b. Specialized cloud market share contracted from 45.3% in Q2 to 44.1% in Q3 as financing conditions became more restrictive.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://tomtunguz.com/the-non-hyperscaler-half-of-nvidia/" target="_blank" rel="noopener noreferrer">Tomasz Tunguz</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">Yesterday</span>
+        <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+    <article>
+      <p class="why">Self-hosting moves teams from per-token API charges to fixed dedicated hardware expenses, requiring optimization of key-value caches and request caching to keep infrastructure costs below hosted endpoints.</p>
       <p class="head">
         <a href="https://newsletter.pragmaticengineer.com/p/inference-engineering-for-software-engineers" target="_blank" rel="noopener noreferrer">Inference engineering for software engineers</a>
       </p>
-      <p class="sum">An engineering guide analyzes the economic and operational tipping points between proprietary endpoints and dedicated hardware. It examines key-value cache memory trade-offs, provider selection, and reserved GPU configurations.</p>
+      <p class="sum">A software engineering guide evaluated the technical trade-offs of migrating away from managed model endpoints toward dedicated GPU hardware. The analysis focuses on memory management strategies, response caching, and key-value cache optimizations necessary to operate self-hosted infrastructure efficiently.</p>
       <div class="foot">
         <span class="src">
           <a href="https://newsletter.pragmaticengineer.com/p/inference-engineering-for-software-engineers" target="_blank" rel="noopener noreferrer">Pragmatic Engineer</a>
         </span>
         <span class="sep">&middot;</span>
-        <span class="src">21h ago</span>
+        <span class="src">Yesterday</span>
+        <span class="badge analysis">Explains the mechanism</span>
+      </div>
+    </article>
+  </section>
+  <section class="lane">
+    <div class="lane-head">
+      <span class="lane-name">Africa</span>
+      <span class="lane-count">1</span>
+    </div>
+    <p class="lane-q">What does this mean for Zimbabwe?</p>
+    <hr>
+    <article>
+      <p class="why">Consumer awareness in regional peer markets has reached 42.1% of internet users, signaling that Zimbabwean SME customers will increasingly expect natural language interfaces in everyday software.</p>
+      <p class="head">
+        <a href="https://techcabal.com/2026/11/19/who-is-using-ai-in-africa/" target="_blank" rel="noopener noreferrer">Who is actually using AI in Africa? It depends on whom you count</a>
+      </p>
+      <p class="sum">A July 2025 regional survey revealed that 42.1% of connected Kenyan adults aged 16 and older reported utilizing ChatGPT during the prior month. This measurement placed the country at the highest recorded consumer adoption level globally in the study.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://techcabal.com/2026/11/19/who-is-using-ai-in-africa/" target="_blank" rel="noopener noreferrer">TechCabal</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">2h ago</span>
+      </div>
+    </article>
+  </section>
+  <section class="lane">
+    <div class="lane-head">
+      <span class="lane-name">Security</span>
+      <span class="lane-count">1</span>
+    </div>
+    <p class="lane-q">What new attack or failure mode appears?</p>
+    <hr>
+    <article>
+      <p class="why">Attackers turned third-party experimentation and feature-flagging scripts into a distribution channel to test and inject malicious code across 178 major destinations without altering server backends directly.</p>
+      <p class="head">
+        <a href="https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/" target="_blank" rel="noopener noreferrer">Attackers Used Optimizely to A/B Test Malware on Top Websites</a>
+      </p>
+      <p class="sum">Attackers exploited a customer experimentation platform to deliver malicious payloads across at least 178 high-profile web platforms. Intruders leveraged standard feature-testing machinery to optimize malware distribution against visitors on major news and financial destinations.</p>
+      <div class="foot">
+        <span class="src">
+          <a href="https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/" target="_blank" rel="noopener noreferrer">Krebs on Security</a>
+        </span>
+        <span class="sep">&middot;</span>
+        <span class="src">Yesterday</span>
         <span class="badge analysis">Explains the mechanism</span>
       </div>
     </article>
@@ -280,34 +314,19 @@ footer{
   <section class="lane">
     <div class="lane-head">
       <span class="lane-name">Business</span>
-      <span class="lane-count">2</span>
+      <span class="lane-count">1</span>
     </div>
     <p class="lane-q">Where is the money actually moving?</p>
     <hr>
     <article>
-      <p class="why">Capital is moving toward expensive, manual physical data collection to build foundation models for sensory modalities outside text and vision.</p>
+      <p class="why">Venture funding is moving beyond text and vision into physical sensory digitization, financing specialized human evaluation teams of 30 people alongside chemical analysis to train sensory foundation models.</p>
       <p class="head">
         <a href="https://www.technologyreview.com/2026/11/18/1148816/smell-startup-osmo-ai-nose-good-as-humans/" target="_blank" rel="noopener noreferrer">This smell startup says its AI nose is as good as a human’s</a>
       </p>
-      <p class="sum">A research startup employs 30 sensory specialists to document aroma profiles alongside precise chemical breakdowns. This ground-truth repository provides the specialized training data necessary to build an olfactory foundation model.</p>
+      <p class="sum">Startup Osmo hired a specialized panel of 30 evaluators to catalog scent descriptions and correlate them with chemical lab analyses. The enterprise is investing capital to compile physical olfactory training datasets intended to construct a foundational sensory model.</p>
       <div class="foot">
         <span class="src">
           <a href="https://www.technologyreview.com/2026/11/18/1148816/smell-startup-osmo-ai-nose-good-as-humans/" target="_blank" rel="noopener noreferrer">MIT Tech Review</a>
-        </span>
-        <span class="sep">&middot;</span>
-        <span class="src">3h ago</span>
-        <span class="badge analysis">Explains the mechanism</span>
-      </div>
-    </article>
-    <article>
-      <p class="why">Enterprise spending is flowing directly into conversational search systems, proving customers will pay for alternatives to standard web search.</p>
-      <p class="head">
-        <a href="https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026/" target="_blank" rel="noopener noreferrer">[AINews] Perplexity hits a $1B revenue run rate, up 4x in 2026</a>
-      </p>
-      <p class="sum">An AI search company reached an annualized run rate of $1B after growing fourfold during 2026. Alongside the revenue benchmark, the organization introduced workspace collaboration tools and tracking endpoints.</p>
-      <div class="foot">
-        <span class="src">
-          <a href="https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026/" target="_blank" rel="noopener noreferrer">Latent Space</a>
         </span>
         <span class="sep">&middot;</span>
         <span class="src">Yesterday</span>
@@ -328,8 +347,8 @@ footer{
     <ul>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://newsletter.pragmaticengineer.com/p/software-engineering-after-code-becomes" target="_blank" rel="noopener noreferrer">Software engineering after code becomes cheap with Satya Nadella</a>
-        <span style="color:var(--line)">&mdash;</span> Pragmatic Engineer
+        <a href="https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/" target="_blank" rel="noopener noreferrer">An Interview With Eric Seufert About Agentic Commerce</a>
+        <span style="color:var(--line)">&mdash;</span> Stratechery
       </li>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
@@ -338,13 +357,18 @@ footer{
       </li>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
+        <a href="https://openai.com/index/inside-the-codex-sandbox" target="_blank" rel="noopener noreferrer">Inside the Codex sandbox</a>
+        <span style="color:var(--line)">&mdash;</span> OpenAI
+      </li>
+      <li>
+        <span class="tag">Agents &amp; Coding</span> &middot;
         <a href="https://aws.amazon.com/blogs/machine-learning/govern-and-discover-records-with-common-metadata-in-aws-agent-registry/" target="_blank" rel="noopener noreferrer">Govern and discover records with common metadata in AWS Agent Registry</a>
         <span style="color:var(--line)">&mdash;</span> AWS Machine Learning
       </li>
       <li>
         <span class="tag">Agents &amp; Coding</span> &middot;
-        <a href="https://www.itweb.co.za/article/kaseya-expands-its-agentic-it-management-platform-with-first-party-mcp-servers-pre-built-skills-and-unified-cyber-resilience-portal/VgZey7JlDyDqdjX9" target="_blank" rel="noopener noreferrer">Kaseya expands its agentic IT management platform with first-party MCP servers, pre-built skills and unified cyber resilience portal</a>
-        <span style="color:var(--line)">&mdash;</span> ITWeb
+        <a href="https://techcentral.co.za/workday-ai-agents-on-a-leash/288559/" target="_blank" rel="noopener noreferrer">Workday puts its AI agents on a leash</a>
+        <span style="color:var(--line)">&mdash;</span> TechCentral
       </li>
       <li>
         <span class="tag">Frontier Models</span> &middot;
@@ -353,8 +377,13 @@ footer{
       </li>
       <li>
         <span class="tag">Frontier Models</span> &middot;
-        <a href="https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/" target="_blank" rel="noopener noreferrer">Put Gemini to work for you</a>
-        <span style="color:var(--line)">&mdash;</span> Google AI
+        <a href="https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/" target="_blank" rel="noopener noreferrer">[AINews] GPT-6.2 Astra, the #2 Frontier Model is better and 20%-600% cheaper, but has mixed reviews; 6.2 Sol likely main workhorse</a>
+        <span style="color:var(--line)">&mdash;</span> Latent Space
+      </li>
+      <li>
+        <span class="tag">Frontier Models</span> &middot;
+        <a href="https://openai.com/index/introducing-gpt-6-2-astra-sol" target="_blank" rel="noopener noreferrer">Introducing GPT-6.2 Astra and Sol</a>
+        <span style="color:var(--line)">&mdash;</span> OpenAI
       </li>
       <li>
         <span class="tag">Infrastructure</span> &middot;
@@ -362,44 +391,34 @@ footer{
         <span style="color:var(--line)">&mdash;</span> Stratechery
       </li>
       <li>
-        <span class="tag">Infrastructure</span> &middot;
-        <a href="https://blogs.nvidia.com/blog/ian-buck-sc26/" target="_blank" rel="noopener noreferrer">Ian Buck Kicks Off NVIDIA’s Week at SC26 as Science Enters the Age of Agents</a>
-        <span style="color:var(--line)">&mdash;</span> NVIDIA
+        <span class="tag">Africa</span> &middot;
+        <a href="https://www.itweb.co.za/article/securing-collaboration-in-the-modern-workplace-why-withsecure-collaboration-protection-matters-for-african-businesses/Olx4z7kaJ2bq56km" target="_blank" rel="noopener noreferrer">Securing collaboration in the modern workplace: Why WithSecure Collaboration Protection matters for African businesses</a>
+        <span style="color:var(--line)">&mdash;</span> ITWeb
       </li>
       <li>
         <span class="tag">Africa</span> &middot;
-        <a href="https://techcabal.com/2026/11/18/miden-partners-with-visa-for-virtual-card/" target="_blank" rel="noopener noreferrer">Miden taps Visa’s network to bring virtual cards to African businesses</a>
-        <span style="color:var(--line)">&mdash;</span> TechCabal
-      </li>
-      <li>
-        <span class="tag">Africa</span> &middot;
-        <a href="https://techcentral.co.za/paratus-lesotho-malawi-african-footprint/288511/" target="_blank" rel="noopener noreferrer">New operations in Lesotho and Malawi strengthen Paratus’s African footprint</a>
-        <span style="color:var(--line)">&mdash;</span> TechCentral
-      </li>
-      <li>
-        <span class="tag">Africa</span> &middot;
-        <a href="https://technext24.com/news/first-circle-capital-raises-26m-debut-funding/" target="_blank" rel="noopener noreferrer">First Circle Capital closes $26m fund to back AI-powered African fintech startups</a>
+        <a href="https://technext24.com/explainer/how-ai-can-help-africa-farmers-and-governments/" target="_blank" rel="noopener noreferrer">Predicting the rain is not enough: How AI can help Africa’s farmers and governments navigate climate uncertainty by Dr Girmaw Abebe Tadesse</a>
         <span style="color:var(--line)">&mdash;</span> Technext
       </li>
       <li>
         <span class="tag">Africa</span> &middot;
-        <a href="https://www.itweb.co.za/article/new-operations-in-lesotho-malawi-strengthen-paratus-african-footprint/j5alrMQAXEWMpYQk" target="_blank" rel="noopener noreferrer">New operations in Lesotho, Malawi strengthen Paratus African footprint</a>
-        <span style="color:var(--line)">&mdash;</span> ITWeb
+        <a href="https://disruptafrica.com/2026/11/19/nigerias-payaza-secures-central-bank-of-kenya-licence/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=nigerias-payaza-secures-central-bank-of-kenya-licence" target="_blank" rel="noopener noreferrer">Nigeria’s Payaza secures Central Bank of Kenya licence</a>
+        <span style="color:var(--line)">&mdash;</span> Disrupt Africa
       </li>
       <li>
         <span class="tag">Security</span> &middot;
-        <a href="https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/" target="_blank" rel="noopener noreferrer">Attackers Used Optimizely to A/B Test Malware on Top Websites</a>
-        <span style="color:var(--line)">&mdash;</span> Krebs on Security
-      </li>
-      <li>
-        <span class="tag">Security</span> &middot;
-        <a href="https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html" target="_blank" rel="noopener noreferrer">Java4Shell Flaw (CVE-2026-114938) Enables Pre-Auth RCE in Jira, Jenkins, Keycloak and More</a>
+        <a href="https://thehackernews.com/2026/11/n-able-confirms-hackers-accessed-cloud.html" target="_blank" rel="noopener noreferrer">Hackers Breach N-able Cloud Server, Disrupting Email Security Management Across 3 Regions</a>
         <span style="color:var(--line)">&mdash;</span> The Hacker News
       </li>
       <li>
         <span class="tag">Security</span> &middot;
-        <a href="https://www.bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks/" target="_blank" rel="noopener noreferrer">Apache warns of Roller RCE vulnerability exploited in attacks</a>
+        <a href="https://www.bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims/" target="_blank" rel="noopener noreferrer">NVIDIA investigating Gentlemen ransomware breach claims</a>
         <span style="color:var(--line)">&mdash;</span> BleepingComputer
+      </li>
+      <li>
+        <span class="tag">Business</span> &middot;
+        <a href="https://www.itweb.co.za/article/sales-leaders-advisors-process-champions-customer-advocates/KjlyrvwBnR4qk6am" target="_blank" rel="noopener noreferrer">Sales leaders: Advisors, process champions, customer advocates</a>
+        <span style="color:var(--line)">&mdash;</span> ITWeb
       </li>
     </ul>
   </details>
